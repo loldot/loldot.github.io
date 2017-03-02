@@ -1,0 +1,173 @@
+---
+---
+
+@import "{{ site.theme }}";
+@import url('http://fonts.googleapis.com/css?family=Molengo&subset=latin');
+/*
+Theme Name: red
+Theme URI: http://lorentzvedeler.com/
+Description: Tema for LorentzVedeler.com
+Author: Lorentz Vedeler
+Version: 1.0.2
+*/
+@media screen{
+	
+	html {
+	  height: 100%;
+	  overflow-y:scroll;
+	}
+	
+	pre
+	{
+		overflow-x:scroll;
+	}
+	h1, h2, h3, h4, h5, h6, p, pre, dt, li, hr, legend, input, button, textarea, select, address, table {margin-top: 1.2em;}
+	body, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote, th, td {
+	  margin: 0;
+	  padding: 0;
+	}
+
+	ol,ul
+	{
+		margin:2em;
+		padding-left:2em;
+	}
+	
+	::selection
+	{
+		background:#FF5050;
+	}
+	::-moz-selection
+	{
+		background:#FF5050;
+	}
+
+	body 
+	{
+	    background: #FE8080 url('../images/bg.png') repeat;
+	    font-size:10pt;
+		/*line-height:1.4em;*/
+	    font-family:Molengo, Helvetica, Arial, sans-serif;
+	    color:#101010;
+	}
+
+	h2,h3,h4,h5,h6{
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-weight:normal;
+		letter-spacing:0.06em;
+		line-height:1.5em;
+		margin:0 0 1em 0;
+		width:100%;
+		text-align:center;
+		border-bottom:2px solid #a00000;
+	}
+	
+	h1
+	{
+	    width:95%;
+	    max-width:980px;
+	    margin:80px auto 0px;
+	    font-size:3.2em;
+	    color: #fff;
+	    letter-spacing:-0.1em;
+	}
+	
+	h2
+	{
+		font-size:2.6em;
+		color:rgb(107, 107, 107);
+	}
+	
+	.entry-title a
+	{
+		color:inherit;
+		display:block;
+		text-decoration:none;
+	}
+
+	em,b,i,label,q,abbr,a
+	{	    
+		font-size:1.4em;
+	}
+	Q { quotes: '«' '»'; }
+	blockquote
+	{
+		margin-bottom:1em;
+		padding-top:0.5em;
+		border-top:1px rgb(107, 107, 107) dotted;
+		font-style:italic;
+	}
+	blockquote:before{
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-size:6em;
+		content: '«';
+		color:#a00000;
+		position:relative;
+		top:-0.2em;
+		display:block;
+		float:left;
+		width:1em;
+		height:0.8em;
+	}
+	p,li
+	{
+	    font-size:1.4em;
+	    line-height:1.3em;
+	    margin-bottom:1em;
+	}
+	
+	p:last-child {
+		margin-bottom:2em;
+	}
+	img
+	{
+		width:100%;
+	}
+	#content
+	{
+	    background-color:#fff;
+	    border: 5px solid #a00000;
+	    max-width:980px;
+	    width: 95%;
+	    margin: auto;
+		padding:0;
+	}
+	
+
+    nav ul
+    {
+        margin:0;
+    }
+	nav
+	{
+	    height:3.2em;
+	    background:#e5faff;
+	    border-bottom: 1px solid #c6f5ff;
+	}
+	
+	nav li
+	{
+		margin-left:2em;
+	    display:inline-block;
+	}
+	
+	nav ul li a
+	{
+		padding:0.45em 0.3% 0.2em 0.3%;
+	    text-decoration:none;
+	    list-style:none;
+	    color: #6b6b6b;
+	    font-size:1.15em;
+		display:inline-block;
+	}
+	
+	nav ul li a:hover
+	{
+	    color:#a00000;
+		border-bottom:0.2em solid rgb(107, 107, 107);;
+	}
+	section
+	{
+		padding:2em;
+	}
+}
