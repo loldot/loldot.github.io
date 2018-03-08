@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="http://lorentzvedeler.com/" />
+	<id>http://lorentzvedeler.com/</id>
+	<title>Lorentz Vedeler</title>
+	<rights>2018</rights>
+	<updated>2018-03-08T21:15:30Z</updated>
+	<subtitle>Welcome!</subtitle>
+	<entry>
+		<link href="http://lorentzvedeler.com/posts/first-post" />
+		<id>http://lorentzvedeler.com/posts/first-post</id>
+		<title>First Post</title>
+		<updated>2018-03-08T00:00:00Z</updated>
+		<content>&lt;p&gt;This is my first post on my new blog. It needed an upgrade, and I decided to move it to github pages. It is generated with the static site generation tool wyam. I have migrated posts from my previous wordpres blog, but I decided to remove some older posts that probably are not relevant any more.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;This is my first post on my new blog. It needed an upgrade, and I decided to move it to github pages. It is generated with the static site generation tool wyam. I have migrated posts from my previous wordpres blog, but I decided to remove some older posts that probably are not relevant any more.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<link href="http://lorentzvedeler.com/posts/same-version-across-asms" />
+		<id>http://lorentzvedeler.com/posts/same-version-across-asms</id>
+		<title>Maintain the same version no. across multiple .net assemblies</title>
+		<updated>2015-05-29T00:00:00Z</updated>
+		<content>&lt;p&gt;If you want several projects to always have the same version number, this is a pretty neat trick:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Remove AssemblyVerison and AssemblyFileVersion from existing AssemblyInfo.cs files&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add a CommonAssemblyInfo.cs file to one of the projects containing just:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; using System.Reflection;
+
+ [assembly: AssemblyVersion(&amp;quot;2.3.1.0&amp;quot;)]
+ [assembly: AssemblyFileVersion(&amp;quot;2.3.1.0&amp;quot;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In the other projects add existing item choose the CommonAssemblyInfo.cs, but remember to add it as a link (click on the arrow on the add button)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+		<summary>&lt;p&gt;If you want several projects to always have the same version number, this is a pretty neat trick:&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<link href="http://lorentzvedeler.com/posts/Keyed-collection" />
+		<id>http://lorentzvedeler.com/posts/Keyed-collection</id>
+		<title>Euler Problem 59</title>
+		<updated>2013-11-11T00:00:00Z</updated>
+		<content>&lt;p&gt;This week I found a cool .net-class in the System.Collections.ObjectModel namespace; the KeyedCollection&amp;lt;TKey,TItem&amp;gt;.&lt;/p&gt;
+&lt;p&gt;It provides a collection that can be indexed by a property. If your item-class has a natural key, all you have to do is derive from the abstract KeyedCollection-class and implement the GetKeyForItem method. It behaves pretty much like a dictionary, except it enumerates it's values rather than KeyValuePairs.&lt;/p&gt;
+&lt;p&gt;It is documented further here: &lt;a href="https://msdn.microsoft.com/en-us/library/ms132438(v=vs.110).aspx"&gt;https://msdn.microsoft.com/en-us/library/ms132438(v=vs.110).aspx&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public class SchoolClass : KeyedCollection&amp;lt;uint, Student&amp;gt;
+{
+    protected override uint GetKeyForItem(Student newStudent)
+    {
+        return newStudent.Number;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+		<summary>&lt;p&gt;This week I found a cool .net-class in the System.Collections.ObjectModel namespace; the KeyedCollection&amp;lt;TKey,TItem&amp;gt;.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<link href="http://lorentzvedeler.com/posts/Euler-59" />
+		<id>http://lorentzvedeler.com/posts/Euler-59</id>
+		<title>Euler Problem 59</title>
+		<updated>2013-09-28T00:00:00Z</updated>
+		<content>&lt;p&gt;This is my solution to Euler problem 59 in python. It is pretty straight forward and relies on the heuristics of the problem. Initially it filters out every key that will only produce printable characters for all its corresponding positions in the encrypted text. It then proceeds to combine these keys and check for actual, common English words in the text.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from math import ceil
+import string
+
+def test():
+    asciis = open('cipher1.txt', 'r').read()
+    encCodes = [int(s) for s in asciis.split(',')]
+
+    asciiSum = 0
+    
+    pKeys = plausibleKeys(encCodes, 3)
+    for k0 in pKeys[0]:
+        for k1 in pKeys[1]:
+            for k2 in pKeys[2]:
+                text = &amp;quot;&amp;quot;.join(applyKey([k0,k1,k2], encCodes))
+                if(properStringProbability(text)):
+                    print(text)
+                    asciiSum = sum([ord(c) for c in text])
+    return asciiSum
+
+def plausibleKeys(encCodes, keyLen):
+    pKeys = {
+        0: [x for x in range(255)],
+        1: [y for y in range(255)],
+        2: [z for z in range(255)]
+        }
+
+    for i, c in enumerate(encCodes):
+        for k in pKeys[i % keyLen]:
+            if chr(c ^ k) not in string.printable:
+                pKeys[i % keyLen].remove(k)
+    return pKeys
+
+def properStringProbability(string):
+    cnt = 0
+    for word in [&amp;quot;the&amp;quot;, &amp;quot;and&amp;quot;, &amp;quot;have&amp;quot;, &amp;quot;that&amp;quot;, &amp;quot;you&amp;quot;]:
+        cnt += string.count(word)        
+    return cnt &amp;gt; 5
+
+
+def applyKey(key, asciiText):
+    return [chr(x ^ int(y)) for (x,y) in zip(key * int(ceil(len(asciiText) / 3)),asciiText)]
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+		<summary>&lt;p&gt;This is my solution to Euler problem 59 in python. It is pretty straight forward and relies on the heuristics of the problem. Initially it filters out every key that will only produce printable characters for all its corresponding positions in the encrypted text. It then proceeds to combine these keys and check for actual, common English words in the text.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<link href="http://lorentzvedeler.com/posts/Euler-92" />
+		<id>http://lorentzvedeler.com/posts/Euler-92</id>
+		<title>Euler Problem 92</title>
+		<updated>2013-09-28T00:00:00Z</updated>
+		<content>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Euler92:
+    def __init__(self):
+        self.knownSeq = {}
+
+    def ChainNumber(self,n):
+        currentSeq = []
+        while not n in [1,89]:
+            currentSeq.append(n)
+            if(n in self.knownSeq):
+                n = self.knownSeq[n]
+            else:
+                n = SquareDigits(n)
+        for x in currentSeq:
+            self.knownSeq[x] = n
+        return n
+
+    def Solve(self, n):
+        return len([x for x in range(2,n) if self.ChainNumber(x) == 89])
+        
+def SquareDigits(n):
+        return sum(map(lambda x: int(x)**2, str(n)))
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+		<summary>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;</summary>
+	</entry>
+</feed>

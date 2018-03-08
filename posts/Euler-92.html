@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Lorentz Vedeler</title>
+        <title>Lorentz Vedeler - Euler Problem 92</title>
         <meta name="description" content="Welcome!" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Lorentz Vedeler" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Lorentz Vedeler" />
+        <meta property="og:title" content="Lorentz Vedeler - Euler Problem 92" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://lorentzvedeler.com/" />
+        <meta property="og:url" content="http://lorentzvedeler.com/posts/Euler-92" />
         <!-- TODO: More social graph meta tags -->
 
         <script src="/assets/js/jquery.min.js"></script>
@@ -89,9 +89,15 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Welcome!</h1>
-    </div>
+    
+<div class="post-heading">
+    <h1>Euler Problem 92</h1>
+    <div class="meta">        
+Published on 28 september 2013<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/Code,-Project-Euler" class="btn btn-default btn-xs">Code, Project Euler</a>
+        </div>     
+</div>
                                         </div>
                                 </div>
                         </div>
@@ -102,65 +108,32 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/first-post">
-                        <h2 class="post-title">First Post</h2>
-                    </a>
-                    <p class="post-meta">Posted on 08 mars 2018</p>
-<p>This is my first post on my new blog. It needed an upgrade, and I decided to move it to github pages. It is generated with the static site generation tool wyam. I have migrated posts from my previous wordpres blog, but I decided to remove some older posts that probably are not relevant any more.</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/same-version-across-asms">
-                        <h2 class="post-title">Maintain the same version no. across multiple .net assemblies</h2>
-                    </a>
-                    <p class="post-meta">Posted on 29 mai 2015</p>
-<p>If you want several projects to always have the same version number, this is a pretty neat trick:</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Keyed-collection">
-                        <h2 class="post-title">Euler Problem 59</h2>
-                    </a>
-                    <p class="post-meta">Posted on 11 november 2013</p>
-<p>This week I found a cool .net-class in the System.Collections.ObjectModel namespace; the KeyedCollection&lt;TKey,TItem&gt;.</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/Code,-Project-Euler" class="btn btn-default btn-sm"> Code, Project Euler (2)</a>
-                    <a role="button" href="/tags/Code" class="btn btn-default btn-sm"> Code (2)</a>
-                    <a role="button" href="/tags/Misc" class="btn btn-default btn-sm"> Misc (1)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p>Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.</p>
+<pre><code>class Euler92:
+    def __init__(self):
+        self.knownSeq = {}
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Euler-59">Euler Problem 59</a></li>
-                    <li><a href="/posts/Euler-92">Euler Problem 92</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
+    def ChainNumber(self,n):
+        currentSeq = []
+        while not n in [1,89]:
+            currentSeq.append(n)
+            if(n in self.knownSeq):
+                n = self.knownSeq[n]
+            else:
+                n = SquareDigits(n)
+        for x in currentSeq:
+            self.knownSeq[x] = n
+        return n
 
+    def Solve(self, n):
+        return len([x for x in range(2,n) if self.ChainNumber(x) == 89])
         
-    </div> 
-</div>
+def SquareDigits(n):
+        return sum(map(lambda x: int(x)**2, str(n)))
+</code></pre>
+
+
 
                                 </div>
                         </div>
