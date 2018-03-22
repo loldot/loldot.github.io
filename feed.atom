@@ -4,7 +4,7 @@
 	<id>http://lorentzvedeler.com/</id>
 	<title>Lorentz Vedeler</title>
 	<rights>2018</rights>
-	<updated>2018-03-22T21:51:46Z</updated>
+	<updated>2018-03-22T22:12:18Z</updated>
 	<subtitle>A blog about things that may interest devs</subtitle>
 	<entry>
 		<link href="http://lorentzvedeler.com/posts/multiple-azure-ad-accounts" />
@@ -54,8 +54,8 @@
 	<entry>
 		<link href="http://lorentzvedeler.com/posts/Keyed-collection" />
 		<id>http://lorentzvedeler.com/posts/Keyed-collection</id>
-		<title>Euler Problem 59</title>
-		<updated>2013-11-11T00:00:00Z</updated>
+		<title>Keyed Collection</title>
+		<updated>2013-10-11T00:00:00Z</updated>
 		<content>&lt;p&gt;This week I found a cool .net-class in the System.Collections.ObjectModel namespace; the KeyedCollection&amp;lt;TKey,TItem&amp;gt;.&lt;/p&gt;
 &lt;p&gt;It provides a collection that can be indexed by a property. If your item-class has a natural key, all you have to do is derive from the abstract KeyedCollection-class and implement the GetKeyForItem method. It behaves pretty much like a dictionary, except it enumerates it's values rather than KeyValuePairs.&lt;/p&gt;
 &lt;p&gt;It is documented further here: &lt;a href="https://msdn.microsoft.com/en-us/library/ms132438(v=vs.110).aspx"&gt;https://msdn.microsoft.com/en-us/library/ms132438(v=vs.110).aspx&lt;/a&gt;&lt;/p&gt;
@@ -69,6 +69,37 @@
 &lt;/code&gt;&lt;/pre&gt;
 </content>
 		<summary>&lt;p&gt;This week I found a cool .net-class in the System.Collections.ObjectModel namespace; the KeyedCollection&amp;lt;TKey,TItem&amp;gt;.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<link href="http://lorentzvedeler.com/posts/Euler-92" />
+		<id>http://lorentzvedeler.com/posts/Euler-92</id>
+		<title>Euler Problem 92</title>
+		<updated>2013-09-28T00:00:00Z</updated>
+		<content>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Euler92:
+    def __init__(self):
+        self.knownSeq = {}
+
+    def ChainNumber(self,n):
+        currentSeq = []
+        while not n in [1,89]:
+            currentSeq.append(n)
+            if(n in self.knownSeq):
+                n = self.knownSeq[n]
+            else:
+                n = SquareDigits(n)
+        for x in currentSeq:
+            self.knownSeq[x] = n
+        return n
+
+    def Solve(self, n):
+        return len([x for x in range(2,n) if self.ChainNumber(x) == 89])
+        
+def SquareDigits(n):
+        return sum(map(lambda x: int(x)**2, str(n)))
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+		<summary>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
 		<link href="http://lorentzvedeler.com/posts/Euler-59" />
@@ -120,36 +151,5 @@ def applyKey(key, asciiText):
 &lt;/code&gt;&lt;/pre&gt;
 </content>
 		<summary>&lt;p&gt;This is my solution to Euler problem 59 in python. It is pretty straight forward and relies on the heuristics of the problem. Initially it filters out every key that will only produce printable characters for all its corresponding positions in the encrypted text. It then proceeds to combine these keys and check for actual, common English words in the text.&lt;/p&gt;</summary>
-	</entry>
-	<entry>
-		<link href="http://lorentzvedeler.com/posts/Euler-92" />
-		<id>http://lorentzvedeler.com/posts/Euler-92</id>
-		<title>Euler Problem 92</title>
-		<updated>2013-09-28T00:00:00Z</updated>
-		<content>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class Euler92:
-    def __init__(self):
-        self.knownSeq = {}
-
-    def ChainNumber(self,n):
-        currentSeq = []
-        while not n in [1,89]:
-            currentSeq.append(n)
-            if(n in self.knownSeq):
-                n = self.knownSeq[n]
-            else:
-                n = SquareDigits(n)
-        for x in currentSeq:
-            self.knownSeq[x] = n
-        return n
-
-    def Solve(self, n):
-        return len([x for x in range(2,n) if self.ChainNumber(x) == 89])
-        
-def SquareDigits(n):
-        return sum(map(lambda x: int(x)**2, str(n)))
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-		<summary>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;</summary>
 	</entry>
 </feed>
