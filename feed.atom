@@ -4,8 +4,22 @@
 	<id>http://lorentzvedeler.com/</id>
 	<title>Lorentz Vedeler</title>
 	<rights>2018</rights>
-	<updated>2018-03-08T21:53:29Z</updated>
+	<updated>2018-03-22T20:54:44Z</updated>
 	<subtitle>A blog about things that may interest devs</subtitle>
+	<entry>
+		<link href="http://lorentzvedeler.com/posts/multiple-azure-ad-accounts" />
+		<id>http://lorentzvedeler.com/posts/multiple-azure-ad-accounts</id>
+		<title>How to use multiple Microsoft accounts without going insane</title>
+		<updated>2018-03-22T00:00:00Z</updated>
+		<content>&lt;p&gt;For the last couple of weeks I have had sort of an identity crisis. Working as a consultant, I have too many credentials for o365/azure/azure AD; being signed in to the right account at the right time has become impossible. Luckily there is a feature in chrome that will cure you of any virtual schizophrenia. If you click your name at the top of the title bar, you'll find a menu with a choice to manage people.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/assets/imgs/chrome_personas.PNG" class="img-fluid" alt="The chrome menu that lets you manage your personality disorder" title="The chrome menu that lets you manage your personality disorder" /&gt;&lt;/p&gt;
+&lt;p&gt;This will take you to a management screen that lets you add people you can switch between.
+&lt;img src="/assets/imgs/chrome_personas_manage.PNG" class="img-fluid" alt="The chrome people management screen" title="The chrome people management screen" /&gt;&lt;/p&gt;
+&lt;p&gt;Now you'll be able to easily switch between your personalities. Each personality has its own private data, so your sessions will be completely separate. They also have a separate window with a custom icon so that it's easy to distinguish them from each other. Awesome!&lt;/p&gt;
+&lt;p&gt;&lt;img src="/assets/imgs/chrome_windows.PNG" class="img-fluid" alt="Each person gets its own customized icon" title="Each person gets its own customized icon" /&gt;&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;For the last couple of weeks I have had sort of an identity crisis. Working as a consultant, I have too many credentials for o365/azure/azure AD; being signed in to the right account at the right time has become impossible. Luckily there is a feature in chrome that will cure you of any virtual schizophrenia. If you click your name at the top of the title bar, you'll find a menu with a choice to manage people.&lt;/p&gt;</summary>
+	</entry>
 	<entry>
 		<link href="http://lorentzvedeler.com/posts/first-post" />
 		<id>http://lorentzvedeler.com/posts/first-post</id>
@@ -57,6 +71,37 @@
 		<summary>&lt;p&gt;This week I found a cool .net-class in the System.Collections.ObjectModel namespace; the KeyedCollection&amp;lt;TKey,TItem&amp;gt;.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
+		<link href="http://lorentzvedeler.com/posts/Euler-92" />
+		<id>http://lorentzvedeler.com/posts/Euler-92</id>
+		<title>Euler Problem 92</title>
+		<updated>2013-09-28T00:00:00Z</updated>
+		<content>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Euler92:
+    def __init__(self):
+        self.knownSeq = {}
+
+    def ChainNumber(self,n):
+        currentSeq = []
+        while not n in [1,89]:
+            currentSeq.append(n)
+            if(n in self.knownSeq):
+                n = self.knownSeq[n]
+            else:
+                n = SquareDigits(n)
+        for x in currentSeq:
+            self.knownSeq[x] = n
+        return n
+
+    def Solve(self, n):
+        return len([x for x in range(2,n) if self.ChainNumber(x) == 89])
+        
+def SquareDigits(n):
+        return sum(map(lambda x: int(x)**2, str(n)))
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+		<summary>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
 		<link href="http://lorentzvedeler.com/posts/Euler-59" />
 		<id>http://lorentzvedeler.com/posts/Euler-59</id>
 		<title>Euler Problem 59</title>
@@ -106,36 +151,5 @@ def applyKey(key, asciiText):
 &lt;/code&gt;&lt;/pre&gt;
 </content>
 		<summary>&lt;p&gt;This is my solution to Euler problem 59 in python. It is pretty straight forward and relies on the heuristics of the problem. Initially it filters out every key that will only produce printable characters for all its corresponding positions in the encrypted text. It then proceeds to combine these keys and check for actual, common English words in the text.&lt;/p&gt;</summary>
-	</entry>
-	<entry>
-		<link href="http://lorentzvedeler.com/posts/Euler-92" />
-		<id>http://lorentzvedeler.com/posts/Euler-92</id>
-		<title>Euler Problem 92</title>
-		<updated>2013-09-28T00:00:00Z</updated>
-		<content>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class Euler92:
-    def __init__(self):
-        self.knownSeq = {}
-
-    def ChainNumber(self,n):
-        currentSeq = []
-        while not n in [1,89]:
-            currentSeq.append(n)
-            if(n in self.knownSeq):
-                n = self.knownSeq[n]
-            else:
-                n = SquareDigits(n)
-        for x in currentSeq:
-            self.knownSeq[x] = n
-        return n
-
-    def Solve(self, n):
-        return len([x for x in range(2,n) if self.ChainNumber(x) == 89])
-        
-def SquareDigits(n):
-        return sum(map(lambda x: int(x)**2, str(n)))
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-		<summary>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;</summary>
 	</entry>
 </feed>
