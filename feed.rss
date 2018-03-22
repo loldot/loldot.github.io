@@ -5,8 +5,8 @@
 		<link>http://lorentzvedeler.com/</link>
 		<description>A blog about things that may interest devs</description>
 		<copyright>2018</copyright>
-		<pubDate>Thu, 22 Mar 2018 21:44:14 GMT</pubDate>
-		<lastBuildDate>Thu, 22 Mar 2018 21:44:14 GMT</lastBuildDate>
+		<pubDate>Thu, 22 Mar 2018 21:51:46 GMT</pubDate>
+		<lastBuildDate>Thu, 22 Mar 2018 21:51:46 GMT</lastBuildDate>
 		<item>
 			<title>How to use multiple Microsoft accounts without going insane</title>
 			<link>http://lorentzvedeler.com/posts/multiple-azure-ad-accounts</link>
@@ -72,37 +72,6 @@
 </content:encoded>
 		</item>
 		<item>
-			<title>Euler Problem 92</title>
-			<link>http://lorentzvedeler.com/posts/Euler-92</link>
-			<description>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;</description>
-			<guid>http://lorentzvedeler.com/posts/Euler-92</guid>
-			<pubDate>Sat, 28 Sep 2013 00:00:00 GMT</pubDate>
-			<content:encoded>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class Euler92:
-    def __init__(self):
-        self.knownSeq = {}
-
-    def ChainNumber(self,n):
-        currentSeq = []
-        while not n in [1,89]:
-            currentSeq.append(n)
-            if(n in self.knownSeq):
-                n = self.knownSeq[n]
-            else:
-                n = SquareDigits(n)
-        for x in currentSeq:
-            self.knownSeq[x] = n
-        return n
-
-    def Solve(self, n):
-        return len([x for x in range(2,n) if self.ChainNumber(x) == 89])
-        
-def SquareDigits(n):
-        return sum(map(lambda x: int(x)**2, str(n)))
-&lt;/code&gt;&lt;/pre&gt;
-</content:encoded>
-		</item>
-		<item>
 			<title>Euler Problem 59</title>
 			<link>http://lorentzvedeler.com/posts/Euler-59</link>
 			<description>&lt;p&gt;This is my solution to Euler problem 59 in python. It is pretty straight forward and relies on the heuristics of the problem. Initially it filters out every key that will only produce printable characters for all its corresponding positions in the encrypted text. It then proceeds to combine these keys and check for actual, common English words in the text.&lt;/p&gt;</description>
@@ -150,6 +119,37 @@ def properStringProbability(string):
 
 def applyKey(key, asciiText):
     return [chr(x ^ int(y)) for (x,y) in zip(key * int(ceil(len(asciiText) / 3)),asciiText)]
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded>
+		</item>
+		<item>
+			<title>Euler Problem 92</title>
+			<link>http://lorentzvedeler.com/posts/Euler-92</link>
+			<description>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;</description>
+			<guid>http://lorentzvedeler.com/posts/Euler-92</guid>
+			<pubDate>Sat, 28 Sep 2013 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;p&gt;Here's my solution to Euler problem 92. The code is pretty simple, it tries to shortcut the sequence by storing every number in a chain along with the number that recurs.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Euler92:
+    def __init__(self):
+        self.knownSeq = {}
+
+    def ChainNumber(self,n):
+        currentSeq = []
+        while not n in [1,89]:
+            currentSeq.append(n)
+            if(n in self.knownSeq):
+                n = self.knownSeq[n]
+            else:
+                n = SquareDigits(n)
+        for x in currentSeq:
+            self.knownSeq[x] = n
+        return n
+
+    def Solve(self, n):
+        return len([x for x in range(2,n) if self.ChainNumber(x) == 89])
+        
+def SquareDigits(n):
+        return sum(map(lambda x: int(x)**2, str(n)))
 &lt;/code&gt;&lt;/pre&gt;
 </content:encoded>
 		</item>
