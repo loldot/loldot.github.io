@@ -89,6 +89,28 @@
 			}
 		}
 
+		@media print {
+			body {
+				padding: 0.5em;
+			}
+			blockquote {
+				margin-top: 5em;
+			}
+			h1 {
+				text-align: center;
+			}
+			main {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			.side {
+				width: 300px;
+			}
+		}
+
+
 		@media screen and (max-width: 800px) {
 			body {
 				padding: 0.5em;
