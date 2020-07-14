@@ -1,6 +1,7 @@
-Title: Maintain the same version no. across multiple .net assemblies
-Published: 29/5/2015
-Tags: Code
+---
+title: Maintain the same version no. across multiple .net assemblies
+date: 2015-05-29
+tags: Code
 ---
 If you want several projects to always have the same version number, this is a pretty neat trick:
 

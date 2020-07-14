@@ -1,6 +1,8 @@
-Title: Keyed Collection
-Published: 11/10/2013
-Tags: Code
+---
+layout: post
+title: Keyed Collection
+date: 2013-10-11
+tags: Code
 ---
 This week I found a cool .net-class in the System.Collections.ObjectModel namespace; the KeyedCollection<TKey,TItem>.
 

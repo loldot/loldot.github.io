@@ -1,6 +1,8 @@
-Title: How to use multiple Microsoft accounts without going insane
-Published: 22/3/2018
-Tags:   
+---
+layout: post
+title: How to use multiple Microsoft accounts without going insane
+date: 2018-03-22
+tags:   
     - Misc
     - Development
 ---
