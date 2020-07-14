@@ -11,10 +11,12 @@ It provides a collection that can be indexed by a property. If your item-class h
 It is documented further here: https://msdn.microsoft.com/en-us/library/ms132438(v=vs.110).aspx
 
 
-    public class SchoolClass : KeyedCollection<uint, Student>
+```C#
+public class SchoolClass : KeyedCollection<uint, Student>
+{
+    protected override uint GetKeyForItem(Student newStudent)
     {
-        protected override uint GetKeyForItem(Student newStudent)
-        {
-            return newStudent.Number;
-        }
+        return newStudent.Number;
     }
+}
+```
