@@ -1,0 +1,6 @@
+article > header {
+    background: var(--nc-bg-1);
+    border-bottom: none;
+    padding: 1rem calc(50vw - 50%);
+    margin: -2rem calc(0px - (50vw - 50%)) 1rem;
+}
