@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Maintain the same version no. across multiple .net assemblies
 author: Lorentz Vedeler
 date: 2015-05-29
