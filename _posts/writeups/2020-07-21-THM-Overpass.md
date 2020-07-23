@@ -6,7 +6,6 @@ date: 2020-07-21
 tags:   
     - TryHackMe
 ---
-# Write-up: Overpass on tryhackme.com
 
 Here's how I rooted the room overpass on [tryhackme.com][1]
 
