@@ -70,6 +70,8 @@ async function login() {
 
 We can see from the javascript above that a successful login sets the cookie `SessionToken` with the result from the request. I had incorrectly assumed that it would be a JWT token, and had been looking for ways to register a new user to see if I could find some weakness in the tokens. A desperate try was to just set this token to the username I wanted to login with. First I tried setting it to 'admin' and refresh the page. No luck. Then I tried with 'administrator'. Refresh... And behold: The administrator page. It contains a private ssh-key meant for the user james. The key is encrypted, but the text on the page suggests it should be easily crackable, and running john the ripper on it with the rockyou password list cracks it almost instantly even on my old laptop.
 
+> edit: after reading other writeups I have no idea why it didn't work to set the cookie at first try, perhaps I didn't actually save the cookie with changed value. Apperantly it should accept any value in the cookie.
+
 1. Save the key to id_rsa in your working directory.
 2. `/usr/share/john/ssh2john.py id_rsa > id_rsa_hash`
 3. `john --wordlist=/opt/wordlists/rockyou.txt --format=SSH id_rsa_hash`
