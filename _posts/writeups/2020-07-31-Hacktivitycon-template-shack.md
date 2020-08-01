@@ -8,7 +8,7 @@ tags:
 category: writeup
 ---
 
-Template Shack was a challange worth 150 points in the 2020 Hacktivitycon CTF. The template shack appears to be some sort of online shop for bootsrap themes. The site seems to be mostly static and placeholder code. The only thing of note in the source code for the page is a comment that hints at some administration panel that is under construction.
+Template Shack was a challenge worth 150 points in the 2020 Hacktivitycon CTF. The template shack appears to be some sort of online shop for bootsrap themes. The site seems to be mostly static and placeholder code. The only thing of note in the source code for the page is a comment that hints at some administration panel that is under construction.
 
 ``` html
 <!-- TODO: Finish developing the admin section and add functionality to manage the templates --\>
