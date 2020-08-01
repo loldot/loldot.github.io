@@ -1,5 +1,7 @@
 - name: Home
   link: /
+- name: Writeups
+  link: /writeups
 - name: CV
   link: /cv
 - name: About
