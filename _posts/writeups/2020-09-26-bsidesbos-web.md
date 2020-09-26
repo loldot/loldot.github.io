@@ -129,5 +129,5 @@ But first we need to detect how many fields there are in the table. A few tries 
 ![SQL injection in jwt kid field in jwt.io][forging-token]
 
 [story-time]: /assets/imgs/yaml-blog.png "Story time front page"
-[story-time-form]: /assets/imgs/yaml-blog.png "Story time form"
+[story-time-form]: /assets/imgs/yaml-form.png "Story time form"
 [forging-token]: /assets/imgs/jwt-with-sqli.png "SQL injection in jwt kid field in jwt.io"
