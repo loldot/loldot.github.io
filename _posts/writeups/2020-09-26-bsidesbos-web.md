@@ -10,7 +10,7 @@ category: writeup
 
 I only solved two web challenges in this CTF: skid and Yet Another Micro-story Library. All web challenges had a pretty low number of solves.
 
-# Yet Another Micro-story Library
+## Yet Another Micro-story Library
 
 We have to sign up and then log in to see a page with shared stories. When we do we are greeted with a blog listing. At the bottom there is a button to add our own story to the blog.
 
@@ -30,7 +30,7 @@ keywords:
     - "fiction" 
 ```
 
-``
+```
 Bad Request
 
 Error parsing yaml: while scanning a simple key
@@ -80,23 +80,29 @@ The flag is in the web directory, so we can just issue a new command:
 ```
 
 
-# skid
+## skid
 
 The challenge is a true script kiddie blog - teaching the fine art of sqlmap and armitage. We notice a cookie has been set:
 
+```
 skidtoken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6InNraWQifQ.eyJ1c2VybmFtZSI6InNraWQifQ.sacXoUrQCXpaylE4a4RGrCawHqBJJVGfOozOaPxQqOo
-
+```
 The JWT token decodes to the header 
+
+``` json
 {
   "typ": "JWT",
   "alg": "HS256",
   "kid": "skid"
 }
-
+```
 and the body
+
+``` json
 {
   "username": "skid"
 }
+```
 
 The kid field in the header represents a key identifier. The key identifier is used to let the server know which key has been used to sign the token. This is very useful for instance when the token issuing server rotates keys. This allows for a grace period where tokens that have issued right before the key rotation can still be validated by the server after the key rotation. The key identifier is also useful for simply having many different keys at the same time. 
 
