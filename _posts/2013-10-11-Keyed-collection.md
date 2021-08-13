@@ -14,10 +14,7 @@ It is documented further [here][1].
 ```csharp
 public class SchoolClass : KeyedCollection<uint, Student>
 {
-    protected override uint GetKeyForItem(Student newStudent)
-    {
-        return newStudent.Number;
-    }
+    protected override uint GetKeyForItem(Student newStudent) => newStudent.Number;
 }
 ```
 
