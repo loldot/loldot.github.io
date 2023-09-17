@@ -2,7 +2,7 @@
 layout: post
 title: The case of the disappearing digits
 author: Lorentz Vedeler
-date: 2018-03-22
+date: 2023-09-17
 tags:   
     - Misc
     - Development
