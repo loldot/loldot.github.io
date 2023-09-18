@@ -19,4 +19,4 @@ However, our search yielded no such validation code. The real culprit turned out
 To resolve this issue, we opted to use `Dns.GetHostName()` instead.
 
 
-[cover_graphic]: /assets/imgs/computer_noir.PNG "Black and white graphic of computers"
+[cover_graphic]: /assets/imgs/computer_noir.png "Black and white graphic of computers"
