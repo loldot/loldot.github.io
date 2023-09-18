@@ -8,7 +8,7 @@ tags:
     - Development
 ---
 
-![Black and white graphic of computers][cover_graphic ]{: height=320px width=320px}
+![Black and white graphic of computers][cover_graphic]
 
 One of the developers on my team was experiencing an issue with an authentication service. The call to the authentication service consistently failed on his machine, but it worked as expected for all the other members of the team. It also had worked for years on his previous computer. 
 
@@ -19,4 +19,4 @@ However, our search yielded no such validation code. The real culprit turned out
 To resolve this issue, we opted to use `Dns.GetHostName()` instead.
 
 
-[cover_graphic]: /assets/imgs/computer_noir.png "Black and white graphic of computers"
+[cover_graphic]: /assets/imgs/computer_noir_small.png "Black and white graphic of computers"
