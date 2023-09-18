@@ -8,7 +8,7 @@ tags:
     - Development
 ---
 
-![Black and white graphic of computers][cover_graphic]{height=320px width=320px}
+![Black and white graphic of computers][cover_graphic ]{: height=320px width=320px}
 
 One of the developers on my team was experiencing an issue with an authentication service. The call to the authentication service consistently failed on his machine, but it worked as expected for all the other members of the team. It also had worked for years on his previous computer. 
 
