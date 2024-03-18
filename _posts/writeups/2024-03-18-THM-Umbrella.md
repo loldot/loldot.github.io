@@ -7,8 +7,6 @@ tags:
     - TryHackMe
 category: writeup
 ---
-
-# TryHackMe writeup - Umbrella
 Umbrella is a medium machine on TryHackMe with the description: "Breach Umbrella Corp's time-tracking server by exploiting misconfigurations around containerisation."
 
 ## Recon
@@ -70,7 +68,7 @@ curl http://$IP:5000/v2/umbrella/timetracking/manifests/latest -o timetracking-l
 ```
 
 
-To understand what we have got so far, it is important to understand how layers in a docker image works. A lot of useful information can be found on the docker website. A key insight from https://docs.docker.com/build/cache/ is that each line in a Dockerfile pretty much translates to a layer in the build docker image.
+To understand what we have got so far, it is important to understand how layers in a docker image works. A lot of useful information can be found on the docker website. A key insight from [https://docs.docker.com/build/cache/](https://docs.docker.com/build/cache/) is that each line in a Dockerfile pretty much translates to a layer in the build docker image.
 
 ![Diagram explaining how a Dockerfile is translated to layers](https://docs.docker.com/build/images/cache-stack.png)
 
@@ -253,12 +251,9 @@ services:
 
 ## root.txt
 
-We can see that the compose file mounts host directory to a volume in the app container. It is important to know that a docker container is not a virtualized as in a virtual machine. In stead it is isolated from other processes on the host with kernel namespaces and control groups. A container mounts its own root filesystem, but runs as a process in the kernel of the host OS.
+We can see that the compose file mounts host directory to a volume in the app container. It is important to know that a docker container is not a virtualized as in a virtual machine. In stead it is isolated from other processes on the host with kernel namespaces and control groups. A container mounts its own root filesystem, but runs as a process in the kernel of the host OS. A good introduction to the topic of namespaces and cgroups can be found on the [nginx blog](https://www.nginx.com/blog/what-are-namespaces-cgroups-how-do-they-work/). Datadog Security labs has a more [thorough guide](https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-1/) to container security.
 
 The mounted volume will actually make a reference to the "host" filesystem, which we can reach from the container. As the file system is just data, and we have root permissions inside the container, we can modify this part of the file system at will. We can abuse this by adding our own set-uid binary to the directory and running it as our regular user to escalate our privileges.
-
-There are some resources:
-https://docs.docker.com/engine/security/
 
 ```bash
 # In the container
