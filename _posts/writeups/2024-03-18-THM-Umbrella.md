@@ -235,7 +235,7 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: 'timetracking'
-      MYSQL_ROOT_PASSWORD: 'Ng1-f3!Pe7-e5?Nf3xe5'
+      MYSQL_ROOT_PASSWORD: '<redacted>'
     ports:
       - '3306:3306'     
     volumes:
