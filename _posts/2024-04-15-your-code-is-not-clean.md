@@ -42,12 +42,15 @@ have very strong opinions about it, and spend a lot of time discussing the issue
 twitter?
 
 I am almost a 100 percent certain that none of those people, if they stopped bike shedding 
-for a little while, ran a program with any of the proposed solutions would be able to
-tell the difference. If this piece of code is correct and is not slowing down some hot path, 
-no one should ever have to look at it after the code review. However, almost every person 
-chiming in failed to mention what in my opinion is the biggest issue; the grading only makes 
-sense with a maximum score of 100, but the signature does not reveal that. Any developer 
-using this method will have to look at its implementation to understand what they should pass 
-as an argument (or *just know* that the score parameter should be between 0 and 100). In 
-my opinion it does not make sense on its own, and should be a private method. I would
-probably have renamed it as well. 
+for a little while and ran a program with any of the proposed solutions, would be able to
+tell the difference. However, almost every person chiming in failed to mention what in my 
+opinion is the biggest issue; the method is public, but it fails to encapsulate its inner 
+workings. The grading only makes sense with a maximum score of 100, but the signature does 
+not reveal that. Any developer using this method will have to look at its implementation 
+to understand what they should pass as an argument. The method makes no sense on its own, 
+and should be a private method; an implementation detail in a bigger unit. 
+
+So yes, even though a lot of developers have strong opinions on this piece of code, when 
+its compiled they don't really care. As long as this function is correct and is not slowing 
+down some hot path, it is unlikely anyone would ever have to look at it again after the code 
+review.
