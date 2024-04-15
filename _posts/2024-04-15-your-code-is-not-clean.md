@@ -19,10 +19,10 @@ lot of engagement.
 
 Many people claimed to have the only correct solution. Two pretty distinct groups of 
 critism formed; the performance camp and the clean code camp. The former worried about
-the possible issues with branch predictions the code poses, and the latte worried about
+the possible performance issues with branch predictions, and the latte worried about
 how unreadable the code is. It would seem most people agreed that the code was bad. But 
 no, one developer would have fired everyone not conforming to his opinion which was: 
-keep the code as it is. He even strongly opposed my favorite of the posted solutions for 
+keep the code as is. He even strongly opposed my favorite of the posted solutions for 
 being "impossible to set a breakpoint in".
 
 ```csharp
