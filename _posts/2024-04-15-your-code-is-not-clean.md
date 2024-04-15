@@ -39,16 +39,15 @@ public string CheckGrade(int score)
 
 So how can I claim that no one cares about the clean code, when clearly a lot of people
 have very strong opinions about it, and spend a lot of time discussing the issue on 
-twitter?
+twitter? In the end, "how clean is the code" just isn't a metric anyone ever use to measure 
+the quality of a software product. Most of the time, with closed source software, it isn't 
+even available. Good software is correct and performant - and while clean code indirectly 
+can have an effect on those metrics, there are many programs out there which have a "clean" 
+codebase, but is the product is just miserable.
 
-I am almost a 100 percent certain that none of those people, if they stopped bike shedding 
-for a little while and ran a program with any of the proposed solutions, would be able to
-tell the difference. However, almost every person chiming in failed to mention what in my 
-opinion is the biggest issue; the method is public, but it fails to encapsulate its inner 
-workings. The grading only makes sense with a maximum score of 100, but the signature does 
-not reveal that. Any developer using this method will have to look at its implementation 
-to understand what they should pass as an argument. The method makes no sense on its own, 
-and should be a private method; an implementation detail in a bigger unit. 
+The function in question is either too trivial to ever be read again or it is wrong,
+in which case all the other proposed solutions are also wrong. Spending time discussing how
+the ifs are nested is just plain and simple bike shedding.
 
 So yes, even though a lot of developers have strong opinions on this piece of code, when 
 its compiled they don't really care. As long as this function is correct and is not slowing 
