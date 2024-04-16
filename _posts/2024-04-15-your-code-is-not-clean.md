@@ -10,7 +10,7 @@ tags:
 
 If you have written a non-trivial amount of code, no one thinks your code is *clean*. 
 Not even you - if you think so right now, just wait a few months and check again. The 
-good news is: no one cares either.
+good news is: no one cares about your code either.
 
 Today, Ozan Yarcı showed an example of an anti-pattern on twitter and it sparked a 
 lot of engagement. 
@@ -25,31 +25,32 @@ no, one developer would have fired everyone not conforming to his opinion which 
 keep the code as is. He even strongly opposed my favorite of the posted solutions for 
 being "impossible to set a breakpoint in".
 
-```csharp
-public string CheckGrade(int score)
-{
-    if (score >= 90) return "A";
-    if (score >= 80) return "B";
-    if (score >= 70) return "C";
-    if (score >= 60) return "D";
-
-    return "F";
-}
-```
-
 So how can I claim that no one cares about the clean code, when clearly a lot of people
 have very strong opinions about it, and spend a lot of time discussing the issue on 
-twitter? In the end, "how clean is the code" just isn't a metric anyone ever use to measure 
+twitter? 
+
+The code in the example is not bad. By some peoples definition of clean code, it is not
+"clean", but it is not hard to reason about. If you struggle to understand that method,
+you should probably try to get a deeper understanding of C-based programming languages.
+The truth is that, even though a lot of developers have strong opinions on this piece of 
+code, they do not struggle to understand what it does. What's more problematic about this
+code is that it is public, even though it should be a private method. The grading only 
+make sense on a scale from 1 to 100, but the score parameter is an int that is not checked.
+The signature reveals nothing about the way the function works, so any one trying to reuse
+the method will have to look at the defintion to understand how to call it. Most of the
+clean alternatives failed to mention that.
+
+In stead, the tweet and its responses highlights how easily programmers are distracted 
+by minutia. In fact it is so common that there is a term for it: bike shedding. The
+tweets also prove that there just isn't a commonly accepted definition for clean or good
+code. No matter how you structure that function, some one is gonna hate it with a 
+passion.
+
+In the end, "how clean is the code" just isn't a metric anyone ever use to measure 
 the quality of a software product. Most of the time, with closed source software, it isn't 
 even available. Good software is correct and performant - and while clean code indirectly 
 can have an effect on those metrics, there are many programs out there which have a "clean" 
-codebase, but is the product is just miserable.
-
-The function in question is either too trivial to ever be read again or it is wrong,
-in which case all the other proposed solutions are also wrong. Spending time discussing how
-the ifs are nested is just plain and simple bike shedding.
-
-So yes, even though a lot of developers have strong opinions on this piece of code, when 
-its compiled they don't really care. As long as this function is correct and is not slowing 
-down some hot path, it is unlikely anyone would ever have to look at it again after the code 
-review.
+codebase, but the product is still miserable. If the function in question is properly 
+encapsulated, works as expected, and is not in a performance hot path. No one is going to 
+look at it again. And that is what you should aim for: code that no one has to read again -
+code that just works.
