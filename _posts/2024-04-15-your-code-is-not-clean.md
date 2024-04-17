@@ -43,8 +43,13 @@ clean alternatives failed to mention that.
 In stead, the tweet and its responses highlights how easily programmers are distracted
 by minutia. In fact it is so common that there is a term for it: bike shedding. The
 tweets also prove that there just isn't a commonly accepted definition for clean or good
-code. No matter how you structure that function, some one is gonna hate it with a
-passion. Any time you write code, its purpose should be to solve a problem. Most of the time it should solve a business problem. Sometimes it might be necessary to solve a problem with existing code. Andonce in a while it may make sense to proactively solve a problem you do not even have at the moment. Be vary of predicting the future though - it is incredibly hard, and that uncertainty makes it tempting to focus on pointless dogma instead. 
+code. No matter how you structure that function, some one is going to hate it with a
+passion. Any time you write code, its purpose should be to solve a problem. Most of the 
+time it should solve a business problem. Sometimes it might be necessary to solve a 
+problem with existing code. And once in a while it may make sense to proactively solve 
+a problem you do not even have at the moment. Be wary of predicting the future though - 
+it is incredibly hard, and that uncertainty makes it tempting to focus on pointless 
+dogma instead. 
 
 In the end, "how clean is the code" just isn't a metric anyone ever use to measure
 the quality of a software product. Most of the time, with closed source software, it isn't
