@@ -28,7 +28,7 @@ by the aesthtics instead of other, more important metrics.
 At the function level, good code is first and foremost a correct solution to a
 business problem. As the code was given to us with no other context, we can only
 assume it is correct. In order to write good code, you should spend more time on
-understanding the business problem and less on htinking about the technical
+understanding the business problem and less on thinking about the technical
 implementation. Only when you understand the problem and solution can you write
 the code that solves the problem.
 
@@ -51,7 +51,7 @@ developers, but it would be silly if a company developing in Haskell could not
 use monads just because they are hard to understand. Similarly, we do not add
 comments explaining in detail what each keyword does; everyone reading the code
 is expected to have that knowledge. I don't think the if statements in the
-example code is hard to understand, although I would probably not have written
+example code are hard to understand, although I would probably not have written
 it like that myself. I find the signature a little confusing though; the name is
 weird and I would be a little concerned that it is public. Minor details, but
 ones I think are more important than the inner workings of the function. For
@@ -61,24 +61,24 @@ this function only makes sense in a certain context and it should be private or
 internal to the package.
 
 It is usually pretty easy to write code that is good when it is written. The
-hard part is writing code that is good long after it was written. It seems like
-code becomes bad over time, often referred to as code rot. I think that is a bad
-term, because it sounds like the code is just going to rot by itself; like if
-you forget the code in the back of the fridge, after a while its just going to
-spoil. When code becomes unmaintainable, it is not the fault of the code, but
+hard part is writing code that is still good long after it was written. It seems
+like code becomes bad over time, often referred to as code rot. I think that is
+a bad term, because it sounds like the code is just going to rot by itself; like
+if you forget the code in the back of the fridge, after a while its just going
+to spoil. When code becomes unmaintainable, it is not the fault of the code, but
 the programmers. The code was either bad to begin with or the maintainers make
 it bad. However, the way your conditionals are structured within a function have
-little effect on maintainability in the larger context. 
+little effect on maintainability in the larger context.
 
 What happens to the `CheckGrade` method when a course is graded according to a
 gaussian curve of the test scores instead of the static lower limits? What
-happens when you get a customer that has an 'E' grade as well? Or when Alex
-should never get an 'F' because his parents funded the university's new computer
-science lab? The author of the code did not accomodate those possible future
-changes. It is easy to blame the original authors for making assumptions that
-does not hold when we have to change the code, but it is impossible to model an
-accurate representation of reality, because reality, and our perception of it,
-constantly changes.
+happens when you get a customer in Europe that has an 'E' grade as well? Or when
+Alex should never get an 'F' because his parents funded the university's new
+computer science lab? The author of the code did not accomodate those possible
+future changes. It is easy to blame the original authors for making assumptions
+that does not hold when we have to change the code, but it is impossible to
+model an accurate representation of reality, because reality, and our perception
+of it, constantly changes.
 
 Sometimes it is better to not make any predictions about the future, but if your
 code is not future proof it should not be exposed to the rest of the codebase.
