@@ -85,11 +85,15 @@ code is not future proof it should not be exposed to the rest of the codebase.
 All code makes assumptions, being aware of the assumptions you make, and the
 certainty of those assumptions is helpful when you write code. The more
 uncertain assumptions should not be depended on. At the beginning of a software
-project, very little is certain. When you start out, you should focus on the
+project, very little is certain. When you start out, you should focus on a few
 boundaries, interfaces and api's. Because they are depended on, interfaces and
 api's should try to encompass future needs. Interfaces and api's encode our
-assumptions about the future. We should aim to make them general and small. For 
-example, maybe the only public method of our module should be:
+assumptions about the future. Since we expect our understaning of the problem to
+change, and our assumptions to be challenged, we should aim to make the
+boundaries between modules general and small, but the modules themselves should
+be large, so they can encapsulate as much knowledge and as many assumptions as
+possible. The book "A philosophy of software design" calls this deep modules.
+For example, maybe the only public method of our module should be:
 
 ```csharp
 public class AssignmentEvaluation
