@@ -20,7 +20,7 @@ minutia. In fact it is so common that there is a term for it: bike shedding.
 Most of the suggestions in the replies and quote tweets are versions of the code
 where the logic of the function is structured in a more aesthtically pleasing
 way. The problem is, that no matter how you structure that function, someone is
-going to hate the way tou did it with a passion. The heated debate on twitter
+going to hate the way you did it with a passion. The heated debate on twitter
 proves just that. I think an important reason the book Clean Code has fallen out
 of favor lately is that many of its most adamant proponents measure code quality
 by the aesthtics instead of other, more important metrics.
@@ -60,26 +60,66 @@ would have to check the implementation to know what it does. My guess is that
 this function only makes sense in a certain context and it should be private or
 internal to the package.
 
-Code is usually pretty good when it is written. Code becomes bad over time, often referred to as code rot. I think that is a bad term, because it sounds
-like the code is just going to rot by itself; like if you forget the code in the
-back of the fridge, after a while its just going to spoil. When code becomes
-unmaintainable, it is not the fault of the code, but the maintainers. What
-happens to the `CheckGrade` method when a course is graded according to a
-gaussian curve of the test scores instead of the static lower limits? What happens when
-you get a customer that has an 'E' grade as well? Or when Alex should never get
-an 'F' because his parents funded the university's new computer science lab? The
-author of the code did not accomodate those possible future changes, and how
-could they? The whole world can have changed in the time that has passed since
-the code was written. Sometimes it is better to not make any assumptions about
-the future, but if your code is not future proof it should not be exposed to the
-rest of the codebase. Modifying code that is not future proof is only going to
-make it worse. When these unknown unkowns strike, it might be better to discard
-what you already have and start again. That is why it is important to
-comparmentalize the code, so that it is easy to start over on just a small
-module. Code that is cohesive and loosely coupled is easy to delete and replace.
-When modules are too intertwined, it is much harder to fix bad design desicions.
-The end result is often that these bad desicions are kept untill the only
-possible solution is a big rewrite.
+It is usually pretty easy to write code that is good when it is written. The
+hard part is writing code that is good long after it was written. It seems like
+code becomes bad over time, often referred to as code rot. I think that is a bad
+term, because it sounds like the code is just going to rot by itself; like if
+you forget the code in the back of the fridge, after a while its just going to
+spoil. When code becomes unmaintainable, it is not the fault of the code, but
+the programmers. The code was either bad to begin with or the maintainers make
+it bad. However, the way your conditionals are structured within a function have
+little effect on maintainability in the larger context. 
+
+What happens to the `CheckGrade` method when a course is graded according to a
+gaussian curve of the test scores instead of the static lower limits? What
+happens when you get a customer that has an 'E' grade as well? Or when Alex
+should never get an 'F' because his parents funded the university's new computer
+science lab? The author of the code did not accomodate those possible future
+changes. It is easy to blame the original authors for making assumptions that
+does not hold when we have to change the code, but it is impossible to model an
+accurate representation of reality, because reality, and our perception of it,
+constantly changes.
+
+Sometimes it is better to not make any predictions about the future, but if your
+code is not future proof it should not be exposed to the rest of the codebase.
+All code makes assumptions, being aware of the assumptions you make, and the
+certainty of those assumptions is helpful when you write code. The more
+uncertain assumptions should not be depended on. At the beginning of a software
+project, very little is certain. When you start out, you should focus on the
+boundaries, interfaces and api's. Because they are depended on, interfaces and
+api's should try to encompass future needs. Interfaces and api's encode our
+assumptions about the future. We should aim to make them general and small. For 
+example, maybe the only public method of our module should be:
+
+```C#
+public class AssignmentEvaluation
+{
+    public Grade Evaluate(Assignment assignment)
+    {
+        var score = Score(assignment);
+        var gradeLetter = CheckGrade(score);
+
+        return new Grade(gradeLetter);
+    }
+
+    private int Score(Assignment assignment) { }
+    private string CheckGrade(int score) { }
+} 
+```
+
+Our interface supports all the mentioned use cases, but we limit our initial
+implementation to what we need right now. Beacause we are careful to only expose
+assumptions we are pretty certain is going to hold for the future, we are free
+to change all the inner workings later.
+
+As you realize your assumptions do not hold, it might be better to discard what
+you already have and start again. That is why it is important to
+compartmentalize the code, so that it is easy to start over on just a smaller
+part. Code that is cohesive and loosely coupled tends to make it easy to delete
+and replace smaller parts within a larger module. When modules are too
+intertwined, it is much harder to fix bad design desicions. The end result is
+often that these bad desicions are kept untill the only possible solution is a
+big rewrite.
 
 In the end, any time you write code, its purpose should be to solve a problem.
 Most of the time it should solve a business problem. Sometimes it might be
