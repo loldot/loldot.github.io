@@ -29,14 +29,14 @@ At the function level, good code is first and foremost a correct solution to a
 business problem. As the code was given to us with no other context, we can only
 assume it is correct. In order to write good code, you should spend more time on
 understanding the business problem and less on htinking about the technical
-implementation. Only when you understand the problem and solution to can you
-write the code that solves the problem.
+implementation. Only when you understand the problem and solution can you write
+the code that solves the problem.
 
 Good code should also be efficient and easy to understand. I think it is
-unlikely that the function is going to become a performance bottleneck. Ven
+unlikely that the function is going to become a performance bottleneck. Even
 though the code looks prone to performance issues due to branch predictions, the
 compiler might optimize that away entirely. We would have to inspect the
-disassembly and/or profile the compiler optimized release build to make any
+disassembly and profile the compiler optimized release build to make any
 conclusions about performance.
 
 That leaves us with "easy to understand". Of the three qualities mentioned,
@@ -60,13 +60,12 @@ would have to check the implementation to know what it does. My guess is that
 this function only makes sense in a certain context and it should be private or
 internal to the package.
 
-Code is usually pretty good when it is written. Code becomes bad over time. This
-is often referred to as code rot. I think that is a bad term, because it sounds
+Code is usually pretty good when it is written. Code becomes bad over time, often referred to as code rot. I think that is a bad term, because it sounds
 like the code is just going to rot by itself; like if you forget the code in the
 back of the fridge, after a while its just going to spoil. When code becomes
 unmaintainable, it is not the fault of the code, but the maintainers. What
 happens to the `CheckGrade` method when a course is graded according to a
-gaussian curve of the test scores instead of the static keys? What happens when
+gaussian curve of the test scores instead of the static lower limits? What happens when
 you get a customer that has an 'E' grade as well? Or when Alex should never get
 an 'F' because his parents funded the university's new computer science lab? The
 author of the code did not accomodate those possible future changes, and how
