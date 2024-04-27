@@ -21,7 +21,7 @@ Most of the suggestions in the replies and quote tweets are versions of the code
 where the logic of the function is structured in a more aesthtically pleasing
 way. The problem is, that no matter how you structure that function, someone is
 going to hate the way you did it with a passion. The heated debate on twitter
-proves just that. I think an important reason the book Clean Code has fallen out
+proves just that. More importantly, though, is that many of the refsctorings are subtly different. For instance a variant which calculates an index in an array to find the correct grade will fail if the score is higher than a hundred or less than zero. The author also propses an even more subtly wrong solution which is based on looping through a C# dictionary, where the keys are the lower bounds and the value the letter of the grade. however, if you look up the documentation for dictionaries you will find that they are not guaranteed to be sorted by keys. I think an important reason the book Clean Code has fallen out
 of favor lately is that many of its most adamant proponents measure code quality
 by the aesthtics instead of other, more important metrics.
 
