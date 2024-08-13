@@ -78,10 +78,12 @@
 				display: flex;
 				flex-direction: row;
 			}
+
 			.side {
 				order: 1;
 				width: 25%;
 			}
+
 			.cv {
 				order: 2;
 				width: 60%;
@@ -93,18 +95,22 @@
 			body {
 				padding: 0.5em;
 			}
+
 			blockquote {
 				margin-top: 5em;
 			}
+
 			h1 {
 				text-align: center;
 			}
+
 			main {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
 			}
+
 			.side {
 				width: 300px;
 			}
@@ -115,24 +121,29 @@
 			body {
 				padding: 0.5em;
 			}
+
 			blockquote {
 				margin-top: 5em;
 			}
+
 			h1 {
 				text-align: center;
 			}
+
 			main {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
 			}
+
 			.side {
 				width: 300px;
 			}
 		}
 	</style>
-	<script type="text/javascript">document.addEventListener('DOMContentLoaded', function(){ var age = new Date(new Date() - new Date(1990,8,6)).getFullYear() - 1970;document.getElementById('age').innerText = ''+ age+' år'});</script>
+	<script
+		type="text/javascript">document.addEventListener('DOMContentLoaded', function () { var age = new Date(new Date() - new Date(1990, 8, 6)).getFullYear() - 1970; document.getElementById('age').innerText = '' + age + ' år' });</script>
 </head>
 
 <body>
@@ -141,7 +152,8 @@
 	</header>
 	<main>
 		<section id="side">
-			<img class="portrait" src="img/portrait200x200.jpg" srcset="img/portrait400x400.jpg 400w" sizes="100vw" alt="portrettfoto av Lorentz">
+			<img class="portrait" src="img/portrait200x200.jpg" srcset="img/portrait400x400.jpg 400w" sizes="100vw"
+				alt="portrettfoto av Lorentz">
 			<dl>
 				<dt>Adresse:</dt>
 				<dd>Solheimslien 60,<br>5056 Bergen</dd>
@@ -158,59 +170,90 @@
 					<ul class="social">
 						<li><a href="https://www.linkedin.com/in/lorentz-vedeler">
 								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAiCAYAAADGUiAIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBQ0NFRTI1RjFDN0MxMUUyQjkxNEY3RUNEMkY1ODRBRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBQ0NFRTI2MDFDN0MxMUUyQjkxNEY3RUNEMkY1ODRBRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkFDQ0VFMjVEMUM3QzExRTJCOTE0RjdFQ0QyRjU4NEFEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkFDQ0VFMjVFMUM3QzExRTJCOTE0RjdFQ0QyRjU4NEFEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+RvTU7wAAAddJREFUeNpiZCjfKsDAwNAAxPkMAwMWAnHB/w6vD4QUsgywQ0EgHkonEFLINMAORXcwQccOCsBYsU1hyDgWmGYfEJNmMUCCsQzDBF8tBn4OFoaPP/4wFGy+xrDg7JMB9xBGyDooCTPMD9UDOxQEQDSIDxIfhI4VwqoQl/iAOhYXUBDkHHyOPXDvHVaFC84+HYyOfcuQuPoSOGOBAIgG8UHiAw1YsIfik0GR+4lyLCUAlLYVBLng/A8/fjNcePaJdo4FFtDYahic8o6zTjJceP6JYYKPJkM8sIxGB6Ck1LDnNsOEI/cHPmRBxdqGOGN42YwOQOL9QI8YSPIyJADTP82LLnyg3kUVp0NRWivAUKekcqF726DARmFwZLBGYLqEldMCnCwMDcAQ15fkw6jOB9yxIIeCMhEy+PD9D8P+NHOM9DvgyQBXzTcgbQPyPPB2cDr2wftvQydkH7z/PvSqW6r0xxgZpYCUD5LQlv///z9jGawOBTpuFpJYGhBvGYwhC3YoyIFA9lkgNobxmRgGNzAGJYFB1xXH2vqDJAWfwezYLaAoh6VZpCSxhZGhfOv/QTLIwTjkSgNoaD4DUrMGvIlIaQ22cBC4YyGxji0YYAcvhLqBIAAIMADJFZ6mnE2AWgAAAABJRU5ErkJggg=="
-									 alt="LinkedIn"></a></li>
+									alt="LinkedIn"></a></li>
 						<li><a href="https://stackoverflow.com/users/1993681/lorentz-vedeler">
 								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAiCAYAAACjv9J3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAJOgAACToAYJjBRwAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTZEaa/1AAADg0lEQVRYR+1WW0hUYRA+ZVfQCozoYmnn/48rEkUJXchIjKKeDCIKIgiipIeIhEjUdXaVogs9FARF1msi1JMPtusi9lIPRvQSVBB0sYsVsmfPumrm6fvPzq5r7pq7rk/1wbDrzPzzzfwz869athCsLckPkeywmowNrJpZDHjFNssjflgeaYdIfLQv6YvZNHOIkKsIZH2KNEosO2wqncfmmYPplQdCHvnLIfXIUSRRw6bsYfRawUL+GgfILsSr9YifIK5g0/RhktiPHr4IXizJZ5UDmwoXQN89Riw/2bfL5rI5c5huYweqGOLA/RHSK9nkYLBJN2APxolJtNukzWZzZjDdogrVDI4FlSOo6AybHVgk9sb6GxVxgk2ZwyS9HBW8HQvqVNSSWFGYRFPchpsZIn0dmzKH6ieqeZZIjIqeWnVrVii7TTvnmB4ZSCDuRc+XOIeng69UmgviO5DRseDyXZDWFiv7QH1RIXTOo+HYVH+nOlhmozyOAzXfzrnyWBWHrWmz0MM6tSKx4KjYwt+HlB3nKmL9VcmFGsVp5+Bk4Go+c7A+BGsOkyxgcxwhr9wNn3CMWBEh2fNtB7UcfL/q6EgMW6Q38JHUsBrF0VigeEASgyC/G2zQDXZzYDXJjUisd5w/ybbRy648fD4Mk7GZXSeHs/BkHAPJ83HBIM61kWwN0dr17K6pFiCpx4l+GKj7bE4Ptq16J/eA/EliQCXYVby1ssf0iiob1/n6tJwP/W3VQ3z2Ww3T/LlTu4iebgX5I3XN48ijJG9CpB9+f7Zgoekxqi2vvo+PZgfhOmMViO9hes1EckdIfjHd+nZ2nRq6sNwI+BIVPQirjEls6k+x3KhsGQboOiThzZUjERKSXaYGEFaMy1wF8siI6imeuBZ8P6Kmt+dk2Vy1q+qMTcVLzUa9Gja1YukPDw6e+ZM0mcBP7WYASV4JY5DUDqsn8DvJRRwqPeDaKjHup9QVq+lE8IRXJ7XA/wOHSA6/zzcck/b29uWsngC1Muoqg25ji0myFkl0oIcvQZIkEdHNx7TOzs6bsfidPt+NqNLvt2PS1dWVkjQZ7DYtB/+A5Ybc+i4Q1SsykL5CQhfZRfP7/bfiHD7fTUeZinSgWazOTIoKw+RayWHSI514ZWkIyeg1Av9Jk5Kqac1Y+LFQSIs0W/grKRzKA4GAK5sCotZJSWdc/jFSTfsN65Qyla0ByxwAAAAASUVORK5CYII="
-									 alt="StackOverflow"></a></li>
+									alt="StackOverflow"></a></li>
 						<li><a href="https://github.com/loldot">
 								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFNTE3OEEyQTk5QTAxMUUyOUExNUJDMTA0NkE4OTA0RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFNTE3OEEyQjk5QTAxMUUyOUExNUJDMTA0NkE4OTA0RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU1MTc4QTI4OTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU1MTc4QTI5OTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+m4QGuQAAAyRJREFUeNrEl21ojWEYx895TDPbMNlBK46IUiNmPvHBSUjaqc0H8pF5+aDUKPEBqU2NhRQpX5Rv5jWlDIWlMCv7MMSWsWwmb3tpXub4XXWdPHvc9/Gc41nu+nedc7/8r/99PffLdYdDPsvkwsgkTBwsA/PADJCnzX2gHTwBt8Hl7p537/3whn04XoDZDcpBlk+9P8AFcAghzRkJwPF4zGGw0Y9QS0mAM2AnQj77FqCzrtcwB1Hk81SYojHK4DyGuQ6mhIIrBWB9Xm7ug/6B/nZrBHBegrkFxoVGpnwBMSLR9EcEcC4qb8pP14BWcBcUgewMnF3T34VqhWMFkThLJAalwnENOAKiHpJq1FZgI2AT6HZtuxZwR9GidSHtI30jOrbawxlVX78/AbNfhHlomEUJJI89O2MqeE79T8/nk8nMBm/dK576hZgmA3cp/R4l9/UeSxiHLVIlNm4nFfT0bxyuIj7LHRTKai+zdJobwMKzcZSJb0ePV5PKN+BqAAKE47UlMnERELMM3EdYP/yrd+XYb2mOiYBiQ8OQnoRBlXrl9JZix7D1pHTazu4MoyBcnYamqAjIMTR8G4FT8LuhLsexXYYjICBiqhQBvYb6fLZIJCjPypVvaOoVAW2WcasCnL2Nq82xHJNSqlCeFcDshaPK0twkAhosjZL31QYw+1rlMpWGMArl23SBsZZO58F2tlJXmjOXS+s4WGvpMiBJT/I2PInZ6lIs9/hBsNS1hS6BG0DSqmYEDRlCXQrmy50P1oDRKTSegmNbUsA0zDMwRhPJXeCE3vWLPQMvan6X8AgIa1vcR4AkGZkDR4ejJ1UHpsaVI0g2LInpOsNFUud1rhxSV+fzC9Woz2EZkWQuja7/B+jUrgtIMpy9YCW4n4K41YfzRneW5E1KJTe4B2Zq1Q5EHEtj4U3AfEzR5SVY4l7QYQPJdN2as7RKBF0BPZqqH4VgMAMBL8Byxr7y8zCZiDlnOcEKIPmUpgB5Z2ww5RdOiiRiNajUmWda5IG6WbhsyY2fx6m8gLcoJDJFkH219M3We1+cnda93pfycZpIJEL/s/wSYADmOAwAQgdpBAAAAABJRU5ErkJggg=="
-									 alt="Github"></a></li>
+									alt="Github"></a></li>
 					</ul>
 				</dd>
 			</dl>
 		</section>
 		<article class="cv">
-			<blockquote><p>Hei! Jeg heter Lorentz og har programmert C# profesjonelt i en del år nå. Først som praktikant samtidig med utdanningen på HiB. 
-				Etter studiene har jeg jobbet fulltid i Escali Financials før jeg begynte i Bouvet i 2018. Målet mitt er å utvikle og levere applikasjoner
-				av høy kvalitet, som kunden blir glad av å bruke. Jeg er lidenskapelig opptatt av godt objektorientert design og kodekvalitet. Min foretrukne 
-				utviklingsplattform er .net core og Microsoft Azure, men er ikke redd for å forsøke seg på andre teknologier.
-			</p><p>
-				I tillegg til programmering har jeg arbeidet med business intelligence med verktøy som Sql Server Reporting Services og Power BI.</blockquote>
-			</p>
+			<blockquote>
+				<p>
+					Hei, jeg heter Lorentz og er en utvikler som trives aller best når jeg får løse komplekse problemer
+					på en enkel måte &mdash; både for brukeren og utvikleren. Utfordringene som finnes innen bank,
+					finans og forsikring synes jeg er ekstra spennende.
+				</p>
+				<p>
+					Så langt i karrieren min har jeg vært arkitekt og utvikler på flere forskjelige tjenster skrevet i
+					.net på Azure-plattformen. Jeg har også jobbet mye med MS Sql Server databaser. I tillegg har jeg
+					både laget brukergrensesnitt i React, vue, vanilla javascript og WPF (grøss) for å nevne noe.
+				</p>
+			</blockquote>
 			<section>
 				<h2>Arbeidserfaring</h2>
 				<section>
+					<h3>Bulder fra Sparebanken Vest</h3>
+					<h4>Seniorutvikler</h4>
+					<span>2022 &ndash; </span>
+					<p>I Bulder har jeg jobbet som fullstack utvikler på låneteamet. Hovedfokuset er på ytterligere
+						automatisering av prosessene i låneflyten på backend og datadrevet A/B-testing av
+						søknadsprosessen på frontend. Tech-stacken er en blanding av moderne og gammel .net i
+						henholdsvis Azure og on-prem, i tillegg har vi en del systemer på GCP på backend og React på
+						frontend.
+					</p>
+				</section>
+				<section>
 					<h3>Bouvet ASA</h3>
 					<h4>Konsulent</h4>
-					<span>2018 &ndash;</span>
-					<p>Som konsulent i Bouvet har jeg vært med på å utvikle løsninger i samarbeid med flere kunder, og på tvers av mange
-						fagdisipliner. I tillegg til utviklingsoppgavene, har jeg blant annet bidratt med tilbudsskriving.</p>
-					<p>Jeg har vært utleid til Equinor nesten helt siden jeg startet i Bouvet. I løpet av den tiden har jeg fått være med på Equinors 
-						store satsing på Azure. I det siste har jeg vært tech lead på backend for et team med tre andre utviklere. Teamet vårt bidrar inn i et større prosjekt med rundt 40-50 utviklere totalt. Gjennom oppdragene i LCI-avdelingen (Life Cycle Information) har jeg bidratt i prosjekter som tar i bruk flere 
-						av tjenestene som Azure leverer. Blant annet Docker, ARM, pipelines, functions, app services, key vaults, Azure AD og AKS.</p>
+					<span>2018 &ndash; 2022</span>
+					<p>Som konsulent i Bouvet har jeg vært med på å utvikle løsninger i samarbeid med flere kunder, og
+						på tvers av mange fagdisipliner. I tillegg til utviklingsoppgavene, har jeg blant annet bidratt
+						med tilbudsskriving.
+					</p>
+					<p>Jeg var utleid til Equinor mer eller mindre fra jeg startet i Bouvet. I løpet av den tiden har
+						jeg fått være med på Equinors store satsing på Azure. Den siste rollen jeg hadde i Equinor var
+						som
+						tech lead på backend for et team med tre andre utviklere. Teamet vårt bidro inn i et større
+						prosjekt med
+						rundt 40-50 utviklere totalt. Gjennom oppdragene i LCI-avdelingen (Life Cycle Information) har
+						jeg bidratt i prosjekter som tar i bruk flere av tjenestene som Azure leverer. Blant annet
+						Docker, ARM, pipelines, functions, app services, key vaults, Azure AD og AKS.
+					</p>
 				</section>
 				<section>
-					<h3>Escali Financial Systems AS</h3>
+					<h3>Escali Financial Systems AS (Stacc Escali i dag)</h3>
 					<h4>Systemutvikler</h4>
 					<span>2013 &ndash; 2017</span>
-					<p>De siste årene har jeg i hovedsak jobbet med utvikling av en desktop-applikasjon for beregning og rapportering av diverse
-						finansielle nøkkeltall over tid. Klienten er skrevet i WPF med prism-rammeverket i bunn. Rapportene i systemet er laget
-						vha. Microsoft Sql Server Reporting Services. Her har jeg samarbeidet tett med kunden og sammen har vi funnet løsninger
-						på problemene de har.</p>
-					<p>I tillegg har jeg deltatt i et prosjekt for forsikringskunder der vi har utviklet funksjonalitet for Solvency II-rapportering.
-						Fra stillingen i Escali har jeg også fått kjennskap til ulike finansielle instrumenter og en viss innsikt i finansmarkedet.</p>
+					<p>De siste årene har jeg i hovedsak jobbet med utvikling av en desktop-applikasjon for beregning og
+						rapportering av diverse finansielle nøkkeltall over tid. Klienten er skrevet i WPF med
+						prism-rammeverket i bunn. Rapportene i systemet er laget vha. Microsoft Sql Server Reporting
+						Services. Her har jeg samarbeidet tett med kunden og sammen har vi funnet løsningerpå problemene
+						de har.
+					</p>
+					<p>I tillegg har jeg deltatt i et prosjekt for forsikringskunder der vi har utviklet funksjonalitet
+						for Solvency II-rapportering. Fra stillingen i Escali har jeg også fått kjennskap til ulike
+						finansielle instrumenter og en viss innsikt i finansmarkedet.
+					</p>
 				</section>
 				<section>
-					<h3>Escali Financial Systems AS</h3>
+					<h3>Escali Financial Systems AS (Stacc Escali i dag)</h3>
 					<h4>Systemutvikler (praktikant)</h4>
 					<span>2009 &ndash; 2013</span>
-					<p>Som praktikant hos Escali jobbet jeg med å konvertere rapporter fra et gammelt Access-system til Sql Server reporting
-						services. I tillegg var jeg også med på å utvikle et system for å rapportere finansiell risiko og avkastning.
+					<p>Som praktikant hos Escali jobbet jeg med å konvertere rapporter fra et gammelt Access-system til
+						Sql Server reporting
+						services. I tillegg var jeg også med på å utvikle et system for å rapportere finansiell risiko
+						og avkastning.
 				</section>
 				<section>
 					<h3>Freelance Webdesigner</h3>
 					<span>2006 &ndash; 2009</span>
-					<p>Jeg lærte meg html og css på fritiden det første året av videregående, og i løpet av skoletiden fikk jeg et par betalte
+					<p>Jeg lærte meg html og css på fritiden det første året av videregående, og i løpet av skoletiden
+						fikk jeg et par betalte
 						oppdrag. Dessverre er det ingen av dem som fremdeles er i bruk.
 					</p>
 				</section>
@@ -221,16 +264,21 @@
 					<h3>Høyskolen i Bergen</h3>
 					<h4>Bachelor &ndash; Dataingeniør</h4>
 					<span>2010 &ndash; 2013</span>
-					<p>Jeg har en bachelorgrad med spesialisering i web- og mobilteknologi fra Høyskolen på Vestlandet (tidligere Høyskolen
-						i Bergen). Bacheloroppgaven ble gitt av Escali Financials. Vi laget et program for å kjøre planlagte importer av data
-						fra mange ulike leverandører, blant andre DnB, Bloomberg og Norges Bank. Oppgaven ble nominert til den beste på instituttet.</p>
+					<p>Jeg har en bachelorgrad med spesialisering i web- og mobilteknologi fra Høyskolen på Vestlandet
+						(tidligere Høyskolen
+						i Bergen). Bacheloroppgaven ble gitt av Escali Financials. Vi laget et program for å kjøre
+						planlagte importer av data
+						fra mange ulike leverandører, blant andre DnB, Bloomberg og Norges Bank. Oppgaven ble nominert
+						til den beste på instituttet.</p>
 				</section>
 				<section>
 					<h3>San Diego State University</h3>
 					<h4>Utvekslingsprogram</h4>
 					<span>2012</span>
-					<p>Jeg tok det tredje semesteret på høyskolen i San Diego, California. Her fikk jeg bryne meg på et fag på master-nivå
-						(CS-635 Object-Oriented Design and Programming). Dessuten fikk jeg mye øvelse i engelsk &mdash; jeg dro nemlig bort
+					<p>Jeg tok det tredje semesteret på høyskolen i San Diego, California. Her fikk jeg bryne meg på et
+						fag på master-nivå
+						(CS-635 Object-Oriented Design and Programming). Dessuten fikk jeg mye øvelse i engelsk &mdash;
+						jeg dro nemlig bort
 						alene for å få mest mulig utbytte av kulturutvekslingen.
 					</p>
 				</section>
@@ -240,32 +288,42 @@
 				<h3>Bergen Røde Kors</h3>
 				<h4>Frivillig Leksehjelp </h4>
 				<span>2016 &ndash; 2018</span>
-				<p>Som frivillig leksehjelp får jeg muligheten til å hjelpe ungdom som sliter med skolen, og noen som bare trenger hjelp
-					med de virkelig vanskelig oppgavene. Uansett synes jeg det er veldig givende å se fremgangen til elevene.</p>
+				<p>Som frivillig leksehjelp får jeg muligheten til å hjelpe ungdom som sliter med skolen, og noen som
+					bare trenger hjelp
+					med de virkelig vanskelig oppgavene. Uansett synes jeg det er veldig givende å se fremgangen til
+					elevene.</p>
 				<h3>Avinta Trend</h3>
 				<h4>Styremedlem</h4>
 				<span>2014 &ndash;</span>
-				<p>Jeg har vært med i styret til Avinta Trend, et investeringsselskap med fokus på teknologiselskaper, siden 2014. Her har
+				<p>Jeg har vært med i styret til Avinta Trend, et investeringsselskap med fokus på teknologiselskaper,
+					siden 2014. Her har
 					jeg fått en god innføring i aksjemarkedet og finansiell analyse.</p>
 			</section>
 			<section>
 				<h2>Kurs/Sertifiseringer</h2>
 				<h3>Microsoft LEAP 2017</h3>
-				<p>Jeg var med Microsofts Lead Enterprise Architect Program til hovedkontoret utenfor Seattle i fem dager og siden på masterclasses
-					i Oslo. Her ble vi kurset i arkitekturer og sikkerhet for Microsofts skyløsninger. Vi var også med på et hackaton der
-					vi fikk prøve ut Microsofts Cognitive Services. Vårt lag lagde en slack-bot som brukte cognitive services til å forstå
+				<p>Jeg var med Microsofts Lead Enterprise Architect Program til hovedkontoret utenfor Seattle i fem
+					dager og siden på masterclasses
+					i Oslo. Her ble vi kurset i arkitekturer og sikkerhet for Microsofts skyløsninger. Vi var også med
+					på et hackaton der
+					vi fikk prøve ut Microsofts Cognitive Services. Vårt lag lagde en slack-bot som brukte cognitive
+					services til å forstå
 					kommandoer på "vanlig" engelsk. </p>
 
 				<h3>React and Redux = Web Applications the Facebook way 2018</h3>
 				<p>
-					Kurset ble holdt av Rick Beerendonk og tok for seg utvikling av single-page applikasjoner med React og jsx. Det var også en modul som inneholdt grunnleggende bruk av Redux.
+					Kurset ble holdt av Rick Beerendonk og tok for seg utvikling av single-page applikasjoner med React
+					og jsx. Det var også en modul som inneholdt grunnleggende bruk av Redux.
 				</p>
 
 				<h3>Architecture with agility 2019</h3>
 				<p>
-					Kurset ble holdt av Kevlin Henney og gikk gjennom hans metodikk for å designe systemer som tåler endringene en smidig 
-					utviklinsmetodikk nødvendivis medfører. Sentrale tema var loggføring av arkitekturbeslutninger, forberede for endringer,
-					og hvordan prosessen kan tilrettelegge for at beslutninger ikke tas før man har mest mulig informasjon om systemet.
+					Kurset ble holdt av Kevlin Henney og gikk gjennom hans metodikk for å designe systemer som tåler
+					endringene en smidig
+					utviklinsmetodikk nødvendivis medfører. Sentrale tema var loggføring av arkitekturbeslutninger,
+					forberede for endringer,
+					og hvordan prosessen kan tilrettelegge for at beslutninger ikke tas før man har mest mulig
+					informasjon om systemet.
 				</p>
 			</section>
 			<section>
@@ -278,9 +336,11 @@
 			</section>
 			<section>
 				<h2>Interesser</h2>
-				<p>Min store lidenskap er å oppleve andre lands natur, kultur og historie, og jeg har som mål å besøke alle kontinentene
-					kloden har å by på. Jeg er også veldig interessert i musikk og drar ofte på konserter. Som følge av interessen for musikk,
-					har jeg spilt en del gitar, men det er tydeligvis ikke der de store talentene ligger.</p>
+				<p>På fritiden driver jeg mye med klatring &mdash; helst ute, men med Bergensværet blir det mye inne
+					også. Andre interesser er løping og turer til fjells, reising, musikk og matlaging. Dessuten får jeg 
+					tid til å nerde meg litt utenom jobb også, blant annet har jeg begynt å programmere en sjakkmotor og
+					deltatt i et par capture the flag konkurranser.
+				</p>
 			</section>
 		</article>
 	</main>
