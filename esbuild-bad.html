@@ -7,10 +7,12 @@
 </head>
 <body>
     <script>
-        const data = await fetch('https://localhost:5121/app/lan');
-        const text = await data.text();
+        (async () => {
+            const data = await fetch('https://localhost:5121/app/lan');
+            const text = await data.text();
 
-        document.write(text);
+            document.write(text);
+        })();
     </script>
 </body>
 </html>
