@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Update: How to use multiple Microsoft accounts without going insane
+title: 'Update: How to use multiple Microsoft accounts without going insane'
 author: Lorentz Vedeler
 date: 2025-02-17
 tags:   
