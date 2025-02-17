@@ -7,6 +7,9 @@ tags:
     - Misc
     - Development
 ---
+
+**Update: I no longer use Chrome. See https://lorentzvedeler.com/2025/02/17/Update-Multiple-Microsoft-Accounts/ instead.**
+
 For the last couple of weeks I have had sort of an identity crisis. Working as a consultant, I have too many credentials for o365/azure/azure AD; being signed in to the right account at the right time has become impossible. Luckily there is a feature in chrome that will cure you of any virtual schizophrenia. If you click your name at the top of the title bar, you'll find a menu with a choice to manage people.
 
 ![The chrome menu that lets you manage your personality disorder][chrome_people]
