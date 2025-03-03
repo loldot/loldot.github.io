@@ -131,6 +131,7 @@ public static uint[] BishopPextIndex = new uint[64];
 
 public static ulong[] PextTable = new ulong[107_648];
 
+
 public static void InitPextTable()
 {
     var sw = Stopwatch.StartNew();
@@ -140,7 +141,7 @@ public static void InitPextTable()
         var sq = Squares.FromIndex(i);
 
         RookPextIndex[i] = currentIndex;
-        RookPextMask[i] = Rooks[i] & ~Bitboards.Masks.Edges;
+        RookPextMask[i] = Rooks[i] & GetEdgeFilter(i);
 
         var mask = RookPextMask[i];
 
@@ -148,7 +149,6 @@ public static void InitPextTable()
         for (ulong j = 0; j < max; j++)
         {
             var blockers = Bitboards.Pdep(j, mask);
-
             // Note that this implementation of generating attacks uses the empty bitboard instead of occupied, hence the inversion of blockers.
             PextTable[currentIndex++] = GenerateRookAttacks(sq, ~blockers);
         }
@@ -159,7 +159,7 @@ public static void InitPextTable()
         var sq = Squares.FromIndex(i);
 
         BishopPextIndex[i] = currentIndex;
-        BishopPextMask[i] = Bishops[i] & ~Bitboards.Masks.Edges;
+        BishopPextMask[i] = Bishops[i] & GetEdgeFilter(i);
 
         var mask = BishopPextMask[i];
         ulong max = 1UL << Bitboards.CountOccupied(mask);
@@ -172,6 +172,14 @@ public static void InitPextTable()
 
     Console.WriteLine($"info Pext init took {sw.ElapsedMilliseconds} ms");
     sw.Stop();
+}
+
+private static ulong GetEdgeFilter(byte i)
+{
+    var result = (Bitboards.Masks.Rank_1 | Bitboards.Masks.Rank_8) & ~Bitboards.Masks.GetRank(i);
+    result |= (Bitboards.Masks.A_File | Bitboards.Masks.H_File) & ~Bitboards.Masks.GetFile(i);
+
+    return ~result;
 }
 ```
 
