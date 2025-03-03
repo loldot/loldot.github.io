@@ -89,7 +89,7 @@ Let's say we just want to create the moves for a rook on the A1 square. The bitb
 0<span style="color:red">1111111</span>
 </pre>
 
-We will call this the move mask from a1. If we count the number of bits set in the move mask from a1, we get 14. Meaning that there are 2^14 or 16384 possible ways pieces can be placed along the move mask to block our rook. Now let's create our table for pre-computed rook moves from A1:
+We will call this the move mask from a1. If we count the number of bits set in the move mask from a1, we get 14. Meaning that there are 2^14 or 16384 possible ways pieces can be placed along the move mask to block our rook.
 
 Next we need to generate a bitboard of occupied pieces for every possible combination of blockers along the move mask. We can achieve this by counting from 0 to 2^14 and using the PDEP instruction to "spread" our number along the move mask.
 
