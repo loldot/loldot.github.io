@@ -123,7 +123,7 @@ Remember that we assume all blockers are enemy pieces and thus can be captured. 
 Below is the full implementation of pext tables in my chess engine:
 
 ```csharp
-
+// The bitboards class can be found here: https://github.com/loldot/lolbot/blob/main/Lolbot.Engine/Core/Bitboards.cs
 public static ulong[] RookPextMask = new ulong[64];
 public static ulong[] BishopPextMask = new ulong[64];
 public static uint[] RookPextIndex = new uint[64];
@@ -140,14 +140,16 @@ public static void InitPextTable()
         var sq = Squares.FromIndex(i);
 
         RookPextIndex[i] = currentIndex;
-        RookPextMask[i] = Rooks[i] & GetEdgeFilter(i);
+        RookPextMask[i] = Rooks[i] & ~Bitboards.Masks.Edges;
 
         var mask = RookPextMask[i];
 
         ulong max = 1UL << Bitboards.CountOccupied(mask);
         for (ulong j = 0; j < max; j++)
         {
-            var blockers = Bitboards.Pepd(j, mask);
+            var blockers = Bitboards.Pdep(j, mask);
+
+            // Note that this implementation of generating attacks uses the empty bitboard instead of occupied, hence the inversion of blockers.
             PextTable[currentIndex++] = GenerateRookAttacks(sq, ~blockers);
         }
     }
@@ -157,13 +159,13 @@ public static void InitPextTable()
         var sq = Squares.FromIndex(i);
 
         BishopPextIndex[i] = currentIndex;
-        BishopPextMask[i] = Bishops[i] & GetEdgeFilter(i);
+        BishopPextMask[i] = Bishops[i] & ~Bitboards.Masks.Edges;
 
         var mask = BishopPextMask[i];
         ulong max = 1UL << Bitboards.CountOccupied(mask);
         for (ulong j = 0; j < max; j++)
         {
-            var blockers = Bitboards.Pepd(j, mask);
+            var blockers = Bitboards.Pdep(j, mask);
             PextTable[currentIndex++] = GenerateBishopAttacks(sq, ~blockers);
         }
     }
