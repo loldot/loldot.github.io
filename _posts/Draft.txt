@@ -1,0 +1,17 @@
+Pext tables
+Introduction
+Chess engines need to be incredibly fast. A common way to achieve fast generation of moves from a chess position, is to pre-calculate all the moves available, disregarding pins and checks, for a piece type from each square on the board. For pawns, knights and the king, this is fairly straightforward. Rooks, bishops and queens are a different matter; the moves available from each square is also dependent on where the other pieces are placed on the board.
+
+One of the most common ways to represent the board is to store the location of pieces in several 64 bit integers. This technique, called bitboards, relies on the fact that we can flip a bit for each square on the board to indicate whether a piece is placed on a square. For example if a piece is moved from A1 to E1 we would flip the first bit to 0 and the 5th bit to 1. 
+
+A bitboard of the white pawns in the starting position would look like this: 0b00000000_00000000_00000000_00000000_00000000_00000000_11111111_00000000; or perhaps more legible:
+
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+11111111
+00000000
+
