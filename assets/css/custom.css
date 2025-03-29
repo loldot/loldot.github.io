@@ -4,3 +4,6 @@ article > header {
     padding: 1rem calc(50vw - 50%);
     margin: -2rem calc(0px - (50vw - 50%)) 1rem;
 }
+main {
+    min-height: 95vh;
+}
