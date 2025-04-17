@@ -1,0 +1,44 @@
+---
+layout: post
+title: 'How I use git'
+author: Lorentz Vedeler
+date: 2025-03-03
+tags:   
+    - Practices
+    - git
+    - Development
+---
+I use git religiously, even for tiny projects that I will probably be the only one to work on. In my first job, we used team foundation server from Microsoft. It was not a very pleasant experience. TFS is a centralized source control and project management system, and all I can remember from using it is:
+
+- Files locked by a person on vacation 
+- Merge conflicts being so tedious to resolve that you constantly wanted to go implement the feature from scratch. 
+
+So you can imagine that I was not  very enthusiastic when a new coworker got his will and was allowed to change the source control system to git - a feature that had just been introduced to TFS-server.
+
+Ill be the first to admit that I fucked up more than a few branches in the early days of using git. But unlike with TFS, there was always a way to recover. I just had to ask the aforementioned coworker, and he could turn the cli into a time machine. 
+
+On solo projects I use git mainly for backup. I don’t really put that much thought into atomic commits and whatnot. I just commit whenever i feel like it and push to a remote repository for safe keeping. Oftentimes i use it to make a checkpoint before experimenting with an implementation, and if I’m not happy with the result I just throw away my working tree and start over. I do occasionally make a branch if it’s a really big feature
+
+My entire work flow is basically:
+
+git add . && git commit -am «some comment»
+git push 
+
+Sprinkle in a few git checkout . or git clean -fxd to reset
+The problem with this workflow is that I sometimes end up with a lot of commits that are just wip, temp, etc. Occasionally I clean this up with git rebase. 
+
+For example: git rebase -i HEAD~3
+Select squash for the relevant commits and come up with a clever message. 
+
+I have found that getting comfortable with interactive rebase also changed my workflow away from stashing. Instead I just git add . and git commit -m wip. Then when I come back to the branch I just do git reset HEAD~1. This is mostly helpful because I am chronically forgetful and often start doing stuff I have my in my stash, causing a mess with conflicts when I remember and try to git stash pop. Coming back to a branch with everything still there is much better for me. Being comfortable with interactive rebase also helps when I inevitably forget that I have a wip commit and need to fix up after two or three more commits. 
+
+When I work on small team projects I prefer creating personal branches. I like following to use folder prefixes that describe the type of change and the change itself like bug/missing-foo-when-updating-bar feature/add-baz-handler, chore/update-libfoobar-v9xx. I assume that no one else touch these branches and if it lives for more than a day I will push the wip state before I leave for work and continue the next day. To fix a single wip commit I do
+
+git commit —amend 
+git push —force-with-lease
+
+The last command ensures that I do not fuck up the branch if someone has pushed to my branch.
+
+Happy belated 20th birthday, git 🎉🐧
+
+
