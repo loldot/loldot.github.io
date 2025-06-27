@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Programming Content I like
+title: Recommendations
 ---
+
+# Programming Content I like
 
 Sometimes I come across exceptional programming content that I would like more
 developers to be aware of. Only the absolute best books, podcasts and articles
