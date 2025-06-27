@@ -1,9 +1,32 @@
-article > header {
+article>header {
     background: var(--nc-bg-1);
     border-bottom: none;
     padding: 1rem calc(50vw - 50%);
     margin: -2rem calc(0px - (50vw - 50%)) 1rem;
 }
+
 main {
     min-height: 95vh;
+}
+
+.coffee {
+    display: block;
+    text-decoration: none;
+    background-color: #6d28d9;
+    width: fit-content;
+    border-radius: 1rem;
+    color: inherit;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.coffee:hover {
+    background-color: #4c1d95;
+}
+
+.coffee>img {
+    height: 24px;
+    width: 24px;
+    margin:0;
+    vertical-align: middle;
 }
