@@ -63,7 +63,7 @@ $$
 - $y_i$ is the observed number of ice creams sold for data point i
 - $\hat{y}_i$ is the predicted number of ice creams sold for data point i.
 
-```C
+```c
 // The function we use to predict our number of ice creams sold given a temperature x
 // It will become clear later why we call this function "forward"
 float forward(float x)
