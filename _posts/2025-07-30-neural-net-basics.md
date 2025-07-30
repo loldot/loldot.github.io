@@ -3,6 +3,7 @@ layout: post
 title: Writing a neural network from scratch in C (part 2)
 author: Lorentz Vedeler
 date: 2025-07-30
+excerpt_separator: <!--end_excerpt-->
 tags:   
     - ML
 ---
@@ -12,6 +13,9 @@ This post is part 2 in a series.
 - [Part 1: Linear regression](/2025/07/28/neural-net-linear/)
 - Part 2: Neural networks
 
+In this part we will take a look at how perceptrons and neural networks imitate the human brain.
+<!--end_excerpt-->
+
 ### Perceptrons
 
 The perceptron is an artificial neuron and is the most basic building block in neural networks. Similar to how a neuron receives signals and "fires" when triggered, a perceptron receives inputs and may or may not trigger an output signal.
@@ -19,7 +23,7 @@ The perceptron is an artificial neuron and is the most basic building block in n
 ![A diagram of a perceptron](/assets/imgs/perceptron.svg)
 
 The perceptron consists of a vector $$\vec{w}$$ of weights, a scalar $$b$$ for bias and receives inputs in a vector $$\vec{x}$$. It also requires an activation function that will determine if the inputs should trigger a signal or not.
-The most important property of an activation function is that it should not be ambiguous whether it has fired or not. There are many such functions that are commonly used. [This table](https://en.wikipedia.org/wiki/Activation_function#Table_of_activation_functions) on wikipedia contains common functions and uesful properties. In our neural net, we will use the hyperbolic tangent function or tanh as our activation function, we will also need to remember its derivative, $$1-(tanh(x))^2$$,which we can find in the table.
+The most important property of an activation function is that it should not be ambiguous whether it has fired or not. There are many such functions that are commonly used. [This table](https://en.wikipedia.org/wiki/Activation_function#Table_of_activation_functions) on wikipedia contains common functions and uesful properties. In our neural net, we will use the hyperbolic tangent function or tanh as our activation function, we will also need to know its derivative, $$1-tanh^2(x)$$, which we can find in the table.
 
 ```c
 const double activation(double x)

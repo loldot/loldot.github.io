@@ -3,6 +3,7 @@ layout: post
 title: Writing a neural network from scratch in C (part 1)
 author: Lorentz Vedeler
 date: 2025-07-28
+excerpt_separator: <!--end_excerpt-->
 tags:   
     - ML
 ---
@@ -11,7 +12,7 @@ This is the first part of my notes on trying to learn machine learning and imple
 
 The source code can be found here: <https://github.com/loldot/nn>
 
-## Linear regression
+### Linear regression
 
 An linear function is a function with a single variable whose graph looks like a straight line.
 We can generalize the function as having a weight $$w$$ and a bias $$b$$. Changing the weight will
@@ -23,6 +24,8 @@ $$f(x) = wx + b$$
 This simple equation can have predictive power if the data fits a line. For example assume we
 own a small ice cream shop and start measuring the temperature at midday and count our number
 of ice creams sold. After a few days of measurements, we have the following data:
+
+<!--end_excerpt-->
 
 ![A scatter plot of the ice cream sales data](/assets/imgs/icecreamchart.png)
 
@@ -49,7 +52,7 @@ I added a linear regression line to the previous Excel chart, and it appears we 
 
 Next we will learn a better method to find this line programmatically.
 
-### Cost function
+#### Cost function
 
 Suppose we just guess our initial values for $$w$$ and $$b$$. Then what we need is a function that can help us determine how well our line fits the data and a function to tell us how we can change $$w$$ and $$b$$ to improve the fit. A function that measures the difference between our measurements and our prediction is often referred to as the cost function of our model
 
@@ -91,7 +94,7 @@ float cost(const size_t m, const float[m] x, const float[m] y)
 
 The question now becomes, how do we reduce the "cost" of our regression line?
 
-### Gradient Descent
+#### Gradient Descent
 
 While there exist many simpler methods to calculate a regression line for such a simple dataset,
 in the context of machine learning and neural networks, we would rather use a method that is a bit complex, but in the end it will be useful for our neural network later.
