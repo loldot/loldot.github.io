@@ -16,7 +16,7 @@ This post is part 2 in a series.
 
 The perceptron is an artificial neuron and is the most basic building block in neural networks. Similar to how a neuron receives signals and "fires" when triggered, a perceptron receives inputs and may or may not trigger an output signal.
 
-![A diagram of a perceptron](../assets/imgs/perceptron.svg)
+![A diagram of a perceptron](/assets/imgs/perceptron.svg)
 
 The perceptron consists of a vector $$\vec{w}$$ of weights, a scalar $$b$$ for bias and receives inputs in a vector $$\vec{x}$$. It also requires an activation function that will determine if the inputs should trigger a signal or not.
 The most important property of an activation function is that it should not be ambiguous whether it has fired or not. There are many such functions that are commonly used. [This table](https://en.wikipedia.org/wiki/Activation_function#Table_of_activation_functions) on wikipedia contains common functions and uesful properties. In our neural net, we will use the hyperbolic tangent function or tanh as our activation function, we will also need to remember its derivative, $$1-(tanh(x))^2$$,which we can find in the table.
@@ -33,7 +33,7 @@ In our brain and nervous system, neurons are interconnected and can even form ne
 
 In the image below, you can see the outline of a neural net with an input layer, a hidden layer and an output layer. Every perceptron in the hidden layer is connected to every input. Every perceptron signals its output to each of the perceptrons in the output layer. Propagating signals through layers in this way is called feeding forward.
 
-![A diagram depicting the basic structure of a neural net](../assets/imgs/neuralnet.svg)
+![A diagram depicting the basic structure of a neural net](/assets/imgs/neuralnet.svg)
 
 ```c
 
