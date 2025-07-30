@@ -7,7 +7,7 @@ tags:
     - ML
 ---
 
-This is the first part of my notes on trying to learn machine learning and implementing a simple neural network from scratch in C - with no abstractions.
+This is the first part of my notes on trying to learn machine learning and implementing a simple neural network from scratch in C. The code is intentionally very raw - we don't even have a function matrix multiplication, I think this makes the details in the algorithms and math stand out more.
 
 The source code can be found here: <https://github.com/loldot/nn>
 
@@ -126,7 +126,7 @@ $$
 (y_1 - \hat{y}_1)^2 +  (y_2 - \hat{y}_2)^2 + ... + (y_m - \hat{y}_m)^2
 $$
 
-Remember that each part in an equation that is separated by a plus can be derived individually. So for now, we will just ignore the sum operator and focus on the $$(y_i - \hat{y}_i)^2$$ part.
+Remember that we can differentiate each term in a sum individually, so for now we will just ignore the sum operator and focus on the $$(y_i - \hat{y}_i)^2$$ part.
 
 First we expand $$(y_i - \hat{y}_i)^2$$ to $$(y_i - (wx_i + b))^2$$ using the definition of our forward function.
 
@@ -151,10 +151,20 @@ $$
 -\frac{1}{m} \sum_{i=1}^m (y_i - \hat{y}_i)x_i
   $$
 
-**Partial derivative with respect to $$b$$**:
-  $$
-  \frac{\partial}{\partial b} \left( \frac{1}{2m} \sum_{i=1}^m{(y_i-\hat{y}_i)^2} \right) = -\frac{1}{m} \sum_{i=1}^m (y_i - \hat{y}_i)
-  $$
+To find the partial derivative with respect to $$b$$, we follow the same approach as we did when found the partial derivative with respect to  $$w$$.
+
+The only difference is the derivative of the inner term:
+
+As before, w let $$e_i=y_i−(wx_i+b)$$ when applying the cain rule. When we differentiate with respects to $$b$$,
+$$w$$ and $$x_i$$ are treated as constants.
+
+$$
+\frac{\partial}{\partial b}​(e_i^2​) = 2e_i​ \cdot \frac{\partial}{\partial b}​(−wx_i + b​)=−2e_i\cdot1
+$$
+
+$$
+\frac{\partial}{\partial b} \left( \frac{1}{2m} \sum_{i=1}^m{(y_i-\hat{y}_i)^2} \right) = -\frac{1}{m} \sum_{i=1}^m (y_i - \hat{y}_i)
+$$
 
 These derivatives tell us how to adjust $$w$$ and $$b$$ to reduce the cost. By iteratively updating $$w$$ and $$b$$ in the opposite direction of these gradients, we can find the values that minimize the cost function.
 
