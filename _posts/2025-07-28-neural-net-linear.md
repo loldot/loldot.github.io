@@ -209,3 +209,5 @@ void gradient_descent(float x[m], float y[m])
     }
 }
 ```
+
+[Continue to part 2](/2025/07/30/neural-net-basics/)
