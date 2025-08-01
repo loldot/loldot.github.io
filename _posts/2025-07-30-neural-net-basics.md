@@ -56,7 +56,7 @@ In the image below, you can see the outline of a neural net with an input layer,
 
 ```c
 // Input layer
-float weights_0[input_size][hidden_size];
+float weights_0[hidden_size][input_size];
 float bias_0[hidden_size];
 
 // Hidden layer 1
@@ -64,7 +64,7 @@ float weights_1[hidden_size][hidden_size];
 float bias_1[hidden_size];
 
 // Hidden layer 2
-float weights_2[hidden_size][output_size];
+float weights_2[output_size][hidden_size];
 float bias_2[output_size];
 
 // Feed forward
@@ -73,7 +73,7 @@ void forward(
     const float input[m],
     const int n,
     float output[n],
-    const float weights[m][n],
+    const float weights[n][m],
     const float bias[n])
 {
     for (int i = 0; i < n; i++)
@@ -81,7 +81,7 @@ void forward(
         float sum = .0f;
         for (int j = 0; j < m; j++)
         {
-            sum += input[j] * weights[j][i];
+            sum += input[j] * weights[i][j];
         }
         output[i] = activation(sum + bias[i]);
     }
