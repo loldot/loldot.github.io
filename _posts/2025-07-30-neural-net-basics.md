@@ -81,7 +81,7 @@ void forward(
         float sum = .0f;
         for (int j = 0; j < m; j++)
         {
-            sum += input[j] * weights[i][j];
+            sum += input[j] * weights[j][i];
         }
         output[i] = activation(sum + bias[i]);
     }
