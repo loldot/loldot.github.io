@@ -56,61 +56,61 @@ In the image below, you can see the outline of a neural net with an input layer,
 
 ```c
 // Input layer
-double weights_0[input_size][hidden_size];
-double bias_0[hidden_size];
+float weights_0[input_size][hidden_size];
+float bias_0[hidden_size];
 
 // Hidden layer 1
-double weights_1[hidden_size][hidden_size];
-double bias_1[hidden_size];
+float weights_1[hidden_size][hidden_size];
+float bias_1[hidden_size];
 
 // Hidden layer 2
-double weights_2[hidden_size][output_size];
-double bias_2[output_size];
+float weights_2[hidden_size][output_size];
+float bias_2[output_size];
 
 // Feed forward
 void forward(
     const int m,
-    const double input[m],
+    const float input[m],
     const int n,
-    double output[n],
-    const double weights[m][n],
-    const double bias[n])
+    float output[n],
+    const float weights[m][n],
+    const float bias[n])
 {
     for (int i = 0; i < n; i++)
     {
-        double sum = .0f;
+        float sum = .0f;
         for (int j = 0; j < m; j++)
         {
-            sum += input[j] * weights[j][i];
+            sum += input[j] * weights[i][j];
         }
         output[i] = activation(sum + bias[i]);
     }
 }
+```
 
-void forward_softmax(
-    const int m,
-    const double input[m],
-    const int n,
-    double output[n],
-    const double weights[m][n],
-    const double bias[n])
+### Softmax
+
+Our neural network will attempt to classify digits in the MNIST handwritten digits dataset. Our output layer will have 10 neurons, each representing a digit from 0-9.
+We chose this representation and not just a single neuron which outputs the integer value of the digit for a reason. Some digits can be very similar when written by hand, for example it can be hard to tell 1 apart from 7, 4 from 9 etc. To accomodate this, we want the neural net to indicate how certain it is that an image contains a given digit. We want to output a probability distribution; if an image contains a perfectly written 8, the neuron representing 8 should be close to 1 or 100%, while a poorly writting 7, might be more close to 50-50 between 1 and 7. We can use a function called softmax to convert any range of numbers into a probability distribution that sums up to one. The softmax function is a bit different than other activation functions, in that it requires the output of all neurons in the layer to be calculated, not just a single neuron. The formula for softmax is:
+
+$$
+\text{softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}
+$$
+
+where $$z_i$$ is the input to the $$i$$-th neuron and $$K$$ is the total number of neurons in the output layer.
+
+```c
+void softmax(const int m, float input[m])
 {
-    double total = 0.0f;
-    for (int i = 0; i < n; i++)
+    float sum = 0.0f;
+    for (int i = 0; i < m; i++)
     {
-        double sum = .0f;
-
-        for (int j = 0; j < m; j++)
-        {
-            sum += input[j] * weights[j][i];
-        }
-        output[i] = exp(sum + bias[i]);
-        total += output[i];
+        sum += exp(input[i]);
     }
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < m; i++)
     {
-        output[i] /= total;
+        input[i] = exp(input[i]) / sum;
     }
 }
 ```
