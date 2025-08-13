@@ -103,26 +103,25 @@ many legitimate criticisms of the current coding agents and tools. Experts
 still write better software than LLMs will produce. For now at least.
 
 In the recently published Stack Overflow devloper survey, as many as 66% of
-programmers responded that their biggest grievance with AI tooling was that
-it would generate code that was almost correct, but not 100 %. When I answered 
-the survey, I was in that group. I am not any more. 
+programmers responded that their biggest grievance with AI tooling was that it
+would generate code that was almost correct, but not 100 %. When I answered the
+survey, I was in that group. I am not any more. The improving in tooling over
+the last year are astonishing. It is certainly not perfect, and I assume we
+cannot extrapolate this rate of improvement for much longer, but I suspect that
+english as a programming language will only increase in popularity going
+forward. 
 
-> Experience with slow "automatic programming" systems, plus their own
-> experience with the problems of organizing loops and address modification, had
-> convinced program- mers that efficient programming was something that could
-> not be automated. [&hellip;] closer inspection of these same systems would
-> often reveal a complex, exception-ridden performer of clerical tasks which was
-> both difficult to use and inefficient 
->
-> &ndash; <cite>Backus, 1978 [2]</cite>
-
-> Automatic programming techniques seek to make it easy to do a desired job
-> on a computer. This is accomplished by providing a language in which the
-> statement of the desired process is natural and concise, together with some
-> means of causing a machine to carry out the stated process.
->
-> &ndash; <cite>Backus, 1958 [1]</cite>
-
+I also believe dismissing LLMs is a mistake. There are still programs written
+in assembly today, but not nearly as many as were written in the 1950s. There
+are many projects that do not require very sophisticated programming, and that
+did not make economic sense before LLMs that may now be possible. A few years
+ago, such problems would be solved with low-code or no-code solutions. The
+problem with such solutions is that they are pretty much impossible to
+hand-over to "real" programmers if they outgrow their platforms. I expect LLMs
+will raise the bar for complexity required before the "real" programmers get
+called in, with the advantage that the output of an LLM is the same as a
+programmer, albeit with perhaps slightly worse quality. LLMs can be instructed
+to follow good development practices, such as adding tests etc.
 
 [1]: https://dl.acm.org/doi/10.1145/800025.1198345
 [2]: https://www.softwarepreservation.org/projects/FORTRAN/paper/Backus-AutomaticProgramming-1958.pdf
