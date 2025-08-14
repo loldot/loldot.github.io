@@ -39,13 +39,19 @@ to a program, you would have to punch out a new card with the corrections made.
 With absolute addressing, that might involve jumping to a previously unused
 address so that you could make the correcting instructions and then jump back.
 
+In fact the programming workflow of the early 1950s was so complicated that I am
+unsure I can even understand all the work it took to run a program, I may have
+left out a few details. Even in 1978, Backus says it is hard to comprehend how
+drastically workflows have changed since then. Being born more than 20 years
+later than that again, I hope I am excused if I get some details wrong.
+
 > It is difficult for a programmer of today to comprehend what "automatic programming"
 > meant to programmers in 1954. To many it then meant simply providing mnemonic opera-
 > tion codes and symbolic addresses, to others it meant the simple process of obtaining sub-
 > routines from a library and inserting the addresses of operands into each subroutine. Most
 > "automatic programming" systems were either assembly programs, or subroutine-fixing
 > programs, or, most popularly, interpretive systems to provide floating point and indexing
-> operations. 
+> operations.
 >
 > &ndash; <cite>Backus, 1978 [2]</cite>
 
@@ -109,7 +115,7 @@ survey, I was in that group. I am not any more. The improving in tooling over
 the last year are astonishing. It is certainly not perfect, and I assume we
 cannot extrapolate this rate of improvement for much longer, but I suspect that
 english as a programming language will only increase in popularity going
-forward. 
+forward.
 
 I also believe dismissing LLMs is a mistake. There are still programs written
 in assembly today, but not nearly as many as were written in the 1950s. There
@@ -122,6 +128,10 @@ will raise the bar for complexity required before the "real" programmers get
 called in, with the advantage that the output of an LLM is the same as a
 programmer, albeit with perhaps slightly worse quality. LLMs can be instructed
 to follow good development practices, such as adding tests etc.
+
+If you think of LLMs as a non-deterministic compiler, it is hard not to see the
+echos of the 1950s in the AI skeptisism today, an I think you can expect LLMs/AI
+to be at least as impactful on our profession as the compiler has been before.
 
 [1]: https://dl.acm.org/doi/10.1145/800025.1198345
 [2]: https://www.softwarepreservation.org/projects/FORTRAN/paper/Backus-AutomaticProgramming-1958.pdf
