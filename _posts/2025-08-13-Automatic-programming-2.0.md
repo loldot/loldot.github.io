@@ -21,10 +21,10 @@ tags:
 IBM introduced FORTRAN, short for Formula Translating System, in 1956. Only a
 few years behind Autocode, it was one of the first compiled languages and
 arguably the first really popular compiled language. Compilers represented a
-paradigm shift in computer programming. 
+paradigm shift in computer programming.
 
 Before compilers such as FORTRAN, programmers would write assembly mnemonics on
-paper. A punchkey operator would use a punchkey machine to write the assembly
+paper. A keypunch operator would use a keypunch machine to write the assembly
 to a stack of punched cards. These cards would then need to be assembled into
 binary op codes with an assembler program. If you wanted to proof-read your
 punched cards, you could add a card with instructions to list the rest of the
@@ -65,13 +65,13 @@ programmers at the time were not exactly enthused by automatic programming:
 > wasteful of machine time and capacity. Third, even if it did work, no
 > respectable programmer would use it &mdash; it was only for sissies!
 
-Now there were legitimate criticism against FORTRAN. As it basicly runs a
+Now there were legitimate criticism against FORTRAN. As it basically runs a
 virtual machine to enable floating point operations, it was slower than manual
 assembly programs written by expert programmers. It did however go on to be a
 massive success in the end. Some FORTRAN systems are still in production, 70
 years after its release &mdash; a monumental achievement. Still Backus is not
 quite as happy as you would think. In 1978, Backus mentions that programmers
-clinging to FORTRAN and other similar languages hinders aoption of new even
+clinging to FORTRAN and other similar languages hinders adoption of new even
 more innovative languages:
 
 > My point is this: while it was perhaps natural and inevitable that languages
@@ -130,7 +130,7 @@ programmer, albeit with perhaps slightly worse quality. LLMs can be instructed
 to follow good development practices, such as adding tests etc.
 
 If you think of LLMs as a non-deterministic compiler, it is hard not to see the
-echos of the 1950s in the AI skeptisism today, an I think you can expect LLMs/AI
+echoes of the 1950s in the AI skepticism today, an I think you can expect LLMs/AI
 to be at least as impactful on our profession as the compiler has been before.
 
 [1]: https://dl.acm.org/doi/10.1145/800025.1198345
