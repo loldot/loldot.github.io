@@ -16,7 +16,7 @@ tags:
 > floating point operations, restricted instruction sets (which might have AND
 > but not OR, for example), and primitive input-output arrangements.
 >
-> &ndash; <cite>Backus, 1978 [2]</cite>
+> &ndash; <cite>Backus, 1978 [1]</cite>
 
 IBM introduced FORTRAN, short for Formula Translating System, in 1956. Only a
 few years behind Autocode, it was one of the first compiled languages and
@@ -53,7 +53,7 @@ later than that again, I hope I am excused if I get some details wrong.
 > programs, or, most popularly, interpretive systems to provide floating point and indexing
 > operations.
 >
-> &ndash; <cite>Backus, 1978 [2]</cite>
+> &ndash; <cite>Backus, 1978 [1]</cite>
 
 Given how laborious the programming process would have been in the fifties, you
 would expect automatic programming to be adopted by everyone. But as Richard
@@ -82,7 +82,7 @@ more innovative languages:
 > programming styles which one day will offer far greater intellectual and
 > computational power.
 >
-> &ndash; <cite>Backus, 1978 [2]</cite>
+> &ndash; <cite>Backus, 1978 [1]</cite>
 
 In 2025, this may sound familiar. LLMs such as Anthropics Claude and Open AIs
 GPTs are set out to perhaps reach the final stage of automatic programming. As
