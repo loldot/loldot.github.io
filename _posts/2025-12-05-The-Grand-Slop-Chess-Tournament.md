@@ -8,11 +8,11 @@ tags:
     - Development
 ---
 
-Inspired by Sebastian Lagues Chess bot competition where he made a framework for writing a chess engine and challenged his viewers to make
-the best search engine they could within a maximum limit of C# tokens, I ripped out the innards of my chess engine and invited all my imaginary
-friends to make their own implementation. Gemini, Claud, Codex and Grok entered to make the best Slopfish version and win the Grand Slop Chess
-Tournament 🏆. I decided to not put any other constraints other than that the whole engine must be written in one go, my assumption being
-that more features and more code would also mean more bugs.
+A while ago, I watched Sebastian Lagues youtube channel where he made a framework for writing a chess engine and challenged his viewers to make
+the best chess engine they could within a maximum limit of C# tokens. Inspired by this, I ripped out the innards of my chess engine and invited
+all my imaginary friends to make their own implementation. Gemini, Claude, Codex and Grok entered to make the best Slopfish version and win the
+Grand Slop Chess Tournament 🏆. I decided to not put any other constraints other than that the whole engine must be written in one go, my
+assumption being that more features and more code would also mean more bugs.
 
 ![The Grand Slop Chess Tournament](/assets/imgs/tgsct.png)
 
