@@ -14,7 +14,7 @@ friends to make their own implementation. Gemini, Claud, Codex and Grok entered 
 Tournament 🏆. I decided to not put any other constraints other than that the whole engine must be written in one go, my assumption being
 that more features and more code would also mean more bugs.
 
-![The Grand Slop Chess Tournament](../assets/imgs/tgsct.png)
+![The Grand Slop Chess Tournament](/assets/imgs/tgsct.png)
 
 ## Warmup round
 
