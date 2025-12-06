@@ -123,6 +123,11 @@ repetition.
 
 ## Feature Comparison
 
+I think all of the LLMs made decent priorities for features to implement. However none of them were able to make a bug-free
+engine. From a cursory look it seems like handling cancelled searches and especially the interaction with the transposition
+table seem to cause them great issue. My non-standard move struct did not cause them any problems. Some of the engines were
+able to cram in more features than others, but all pretty much followed the "Connorpasta" mentioned on [CPW][2].
+
 | Feature                           | Codex | Claude | Gemini | Grok |
 |-----------------------------------|-------|--------|--------|------|
 | **Search**                        |       |        |        |      |
@@ -147,3 +152,4 @@ repetition.
 | History Heuristic                 |✅    |      ✅|     ✅|    ✅|
 
 [1]: https://www.chessprogramming.org/Simplified_Evaluation_Function
+[2]: https://www.chessprogramming.org/Search_Progression
